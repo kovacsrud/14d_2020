@@ -49,10 +49,16 @@ namespace Ismetles
             //Logikai értékek tárolása
             bool logikai = true;
 
+            //Összetett típusok
+            //int tömb létrehozása az elemek megadásával
+            int[] szamok = { 1, 2, 3, 4, 5 };
 
+            int[] szamok2 = new int[5];
 
-
-
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                szamok2[i] = szamok[i];
+            }
 
 
 
