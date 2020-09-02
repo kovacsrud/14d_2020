@@ -22,12 +22,38 @@ namespace Ismetles
             short e = 34;
 
             //lebegőpontos számok
-            float fl = 10.56f;
-            double db = 10.567788;
-            decimal dec = 10.567788848m;
+            float fl = 10.12345678998765432f;
+            double db = 10.12345678998765432;
+            decimal dec = 10.1234567899876543212345678987654321m;
 
-            
-            
+            //Console.WriteLine({0},{1},{2},fl);
+
+            Console.WriteLine($"Fl:{fl},Db:{db},Dec{dec}");
+
+            // var használata
+            var valami = 1.123;
+
+
+            //Szövegek
+            //nem lehet megváltoztatni
+            string szov = "Valami szöveg";
+
+            //for (int i = 0; i < szov.Length; i++)
+            //{
+            //    Console.WriteLine(szov[i]);
+            //}
+
+            //Karakteres változó
+            char kar = 'p';
+
+            //Logikai értékek tárolása
+            bool logikai = true;
+
+
+
+
+
+
 
 
 
