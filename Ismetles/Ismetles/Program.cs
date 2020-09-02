@@ -10,6 +10,10 @@ namespace Ismetles
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Ismétlés");
+
+            Console.ReadKey();
+
         }
     }
 }
