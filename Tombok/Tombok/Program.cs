@@ -33,6 +33,57 @@ namespace Tombok
 
             TombLista(szazas);
 
+            int db = 0;
+
+            for (int i = 0; i < szazas.Length; i++)
+            {
+                if (szazas[i]>0)
+                {
+                    db++;
+
+                    //Ha összeget gyűjtöttünk volna...
+                    //db=db+szazas[i];
+                    //db+=szazas[i];
+                }
+            }
+
+            //Min, max
+
+            Console.WriteLine($"{db} darab pozitív érték van.");
+
+            int min = szazas[0];
+            int max = szazas[0];
+
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                if (szazas[i]<min)
+                {
+                    min = szazas[i];
+                }
+
+                if (szazas[i]>max)
+                {
+                    max = szazas[i];
+                }
+            }
+
+            Console.WriteLine($"Min:{min},Max:{max}");
+
+            var be = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < szazas.Length; i++)
+            {
+                if (be==szazas[i])
+                {
+                    Console.WriteLine("Az érték benne van!");
+                    break;
+                }
+            }
+
+
+            Console.WriteLine($"A tömbelemek összege:{szazas.Sum()}");
+            
+
             Console.ReadLine();
         }
 
