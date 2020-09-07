@@ -24,6 +24,7 @@ Változók:
 
 Érték típus, referencia típus
 
+
       Stack memória                              HEAP memória
 +-----------------------+                       +-----------------------+
 |A                      |         +------------->Tomb                   |
