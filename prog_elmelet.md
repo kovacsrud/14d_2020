@@ -15,4 +15,7 @@ Fogalma: Olyan instrukciók sorozata, mely megold valamilyen problémát.
 Elemei:
 - utasítás (szekvencia)
 - elágazás (szelekció) -> egyszeres egy- v. kétágú, többszörös
+- ciklus (iteráció) -> elöltesztelő, hátultesztelő, növekményes 
+
+
 
