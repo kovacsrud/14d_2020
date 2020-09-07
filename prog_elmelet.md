@@ -17,5 +17,8 @@ Elemei:
 - elágazás (szelekció) -> egyszeres egy- v. kétágú, többszörös
 - ciklus (iteráció) -> elöltesztelő, hátultesztelő, növekményes 
 
+Változók:
 
+- A memória egy adott területe, névvel ellátva.
+ Elemi (primitív) típusok, összetett típusok
 
