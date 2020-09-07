@@ -19,8 +19,29 @@ namespace Tombok
 
             Console.WriteLine($"Szamok:{szamok[0]},Szamok2:{szamok2[0]}");
 
+            int[] szazas = new int[100];
+
+
+            //töltsük fel -100, 100 közötti véletlen számmal
+
+            Random rand = new Random();
+
+            for (int i = 0; i < szazas.Length; i++)
+            {
+                szazas[i] = rand.Next(-100, 100 + 1);
+            }
+
+            TombLista(szazas);
 
             Console.ReadLine();
+        }
+
+        private static void TombLista(int[] szazas)
+        {
+            for (int i = 0; i < szazas.Length; i++)
+            {
+                Console.WriteLine(szazas[i]);
+            }
         }
     }
 }
