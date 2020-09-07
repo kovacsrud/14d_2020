@@ -50,4 +50,12 @@ Változók:
 +-----------------------+                       +-----------------------+
 
 
+Algoritmus jelölés:
+
+- folyamatábra
+- stuktogram
+- mondatszerű leírás
+- UML -> osztálydiagram
+
+
 
