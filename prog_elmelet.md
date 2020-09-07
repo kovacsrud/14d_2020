@@ -22,3 +22,6 @@ Változók:
 - A memória egy adott területe, névvel ellátva.
  Elemi (primitív) típusok, összetett típusok
 
+Érték típus, referencia típus
+
+
