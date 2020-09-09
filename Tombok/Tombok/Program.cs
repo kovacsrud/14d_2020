@@ -81,7 +81,9 @@ namespace Tombok
             }
 
 
-            Console.WriteLine($"A tömbelemek összege:{szazas.Sum()}");
+            Console.WriteLine($"A tömbelemek összege:{szazas.Sum()},{szazas.Average()}");
+
+            var benne=szazas.Contains(be);
             
 
             Console.ReadLine();
