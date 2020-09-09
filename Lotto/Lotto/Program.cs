@@ -42,8 +42,14 @@ namespace Lotto
             var nyeroSzamok = new int[szamDb];
             var talalat = 0;
 
-            //Tippek bekérése
-            for (int i = 0; i < szamDb; i++)
+            do
+            {
+                talalat = 0;
+                tippek = new int[szamDb];
+                nyeroSzamok = new int[szamDb];
+
+                //Tippek bekérése
+                for (int i = 0; i < szamDb; i++)
             {
                 Console.Write($"{i + 1}.tipp:");
                 var temp = Convert.ToInt32(Console.ReadLine());
@@ -82,6 +88,10 @@ namespace Lotto
             }
 
             Console.WriteLine($"Találatok:{talalat}");
+
+            Console.WriteLine("Még játék? (Y/N)");
+
+            } while (Console.ReadKey(true).Key==ConsoleKey.Y);
 
             Console.ReadKey();
         }
