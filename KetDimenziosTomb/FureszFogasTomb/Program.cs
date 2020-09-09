@@ -15,6 +15,7 @@ namespace FureszFogasTomb
             //olyan tömb ahol a tömbelemek tömbök
 
             int[][] furesz = new int[4][];
+            Random rand = new Random();
 
             furesz[0]=new int[] { 1,2,3,4,5};
             furesz[1] = new int[] { 11, 22, 33 };
@@ -22,17 +23,22 @@ namespace FureszFogasTomb
             furesz[3] = new int[] { 111, 222 };
 
 
-            //kiíratás
-
+           // kiíratás
             for (int i = 0; i < furesz.Length; i++)
             {
                 for (int j = 0; j < furesz[i].Length; j++)
                 {
-                    Console.Write(furesz[i][j]+" ");
+                    Console.Write(furesz[i][j] + " ");
                 }
                 Console.WriteLine();
             }
 
+            //Hozzon létre egy új jagged tömböt, ahol az elemek
+            //száma véletlenszerű, 1-5 közötti érték
+            //A tömbelemekbe kerülő tömbök elemszáma is legyen 1-5 közötti
+            //véletlenszerű érték
+            //A tömbelemekbe kerülő értékek -10 - +20 közötti értékek legyenek!
+           
 
             Console.ReadKey();
         }
