@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,16 @@ namespace Lotto
 {
     class Program
     {
+        public static void TombList(int[] tomb)
+        {
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.Write(tomb[i] + " ");
+                //Debug.Write(tomb[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             //Készítsen lottójátékot, amelyben adott mennyiségű számból
@@ -20,7 +31,57 @@ namespace Lotto
             //Sorsoljon ki adott számú nyerőszámot
             //Határozza meg és írja ki a találatok számát
 
+            Console.Write("Hány számot húzunk?");
+            var szamDb = Convert.ToInt32(Console.ReadLine());
 
+            Console.Write("Hány számból húzunk?");
+            var osszSzam = Convert.ToInt32(Console.ReadLine());
+            Random rand = new Random();
+
+            var tippek = new int[szamDb];
+            var nyeroSzamok = new int[szamDb];
+            var talalat = 0;
+
+            //Tippek bekérése
+            for (int i = 0; i < szamDb; i++)
+            {
+                Console.Write($"{i + 1}.tipp:");
+                var temp = Convert.ToInt32(Console.ReadLine());
+                while (temp<1 || temp>osszSzam || tippek.Contains(temp))
+                {
+                    Console.Write("Rossz tipp");
+                    temp = Convert.ToInt32(Console.ReadLine());
+                }
+
+                tippek[i] = temp;
+
+            }
+            
+            TombList(tippek);
+
+            //Tippek bekérése
+            for (int i = 0; i < szamDb; i++)
+            {
+                var temp = rand.Next(1, osszSzam + 1);
+                while (nyeroSzamok.Contains(temp))
+                {
+                    temp = rand.Next(1, osszSzam + 1);
+                }
+
+                nyeroSzamok[i] = temp;
+
+            }
+            TombList(nyeroSzamok);
+
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                if (nyeroSzamok.Contains(tippek[i]))
+                {
+                    talalat++;
+                } 
+            }
+
+            Console.WriteLine($"Találatok:{talalat}");
 
             Console.ReadKey();
         }
