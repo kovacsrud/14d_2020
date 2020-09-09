@@ -38,6 +38,21 @@ namespace Fuggvenyek
             a = a * a;
         }
 
+        public static void TombLista(int[] tomb)
+        {
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.Write(tomb[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        public static double Hatvany(double szam,double kitevo)
+        {
+            return Math.Pow(szam, kitevo);
+        }
+
+
         static void Main(string[] args)
         {
             //Függvény (alprogram)
@@ -59,15 +74,20 @@ namespace Fuggvenyek
             Console.WriteLine(a);
             Cimszerint(ref a);
             Console.WriteLine(a);
-            
+
             //készítsen függvényt, amely a paraméterül
             //kapott tömb elemeit kíírja
 
+            var tomb = new int[] { 1, 2, 3, 4, 5 };
+            TombLista(tomb);
 
             //készítsen visszatérési értékkel rendelkező
             //függvényt, amely egy szám tetszőleges
             //hatványát adja vissza
 
+            Console.WriteLine(Hatvany(3,2));
+
+            Console.ReadKey();
                         
         }
     }
