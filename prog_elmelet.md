@@ -61,3 +61,13 @@ Algoritmus jelölés:
 
 Az objektum összetartozó adatokat és metódusokat jelent. Az objektum egy önálló egység, amely jó meghatározott határokkal rendelkezik.
 
+Osztály: az osztály az objektum terve, definíciója.
+Példány: az osztály alapján létrehozott használható, "futtatható" objektum. 
+
+pl. 
+
+**példányosítás**
+```C#
+Random veletlenSzam=new Random();
+```
+
