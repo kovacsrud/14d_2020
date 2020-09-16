@@ -85,3 +85,9 @@ A konstruktor metódus feladata a példány kezdeti (vagy akár végleges) ért�
 ## Öröklődés
 
 Egy meglévő osztály továbbfejleszthetünk, vagy specializálhatunk az öröklődés segítségével. Egy adott osztályból leszármaztathatunk egy újat, és az utód osztály mindent tudni fog, amit az ős osztály, illetve tudni fogja az utód osztály azokat a metódusokat, adatokat, amelyeket hozzáadtunk.
+
+### Metódusok felülírása
+
+Ha szükség van arra, hogy az utód osztályban máshogy viselkedjen az ős osztály metódusa, akkor metódus felülírást alkalmazunk. Ebben az esetben az ős osztályban a **VIRTUAL** kulcsszóval jelezzük, hogy az adott metódus az utód osztályban felülírható.
+Az utód osztályban a felülíró metódusnál az **OVERRIDE** kulcsszó fog szerepelni.
+
