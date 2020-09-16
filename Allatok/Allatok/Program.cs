@@ -26,6 +26,16 @@ namespace Allatok
 
             Console.WriteLine(masikAllat.GetNev());
 
+            Kutya kutya = new Kutya();
+
+            Console.WriteLine($"Kutya:{kutya.GetNev()}");
+
+            kutya.Kapar();
+            kutya.Ugat();
+            kutya.Mozog();
+
+            Kutya ujKutya = new Kutya(120, "Zénó", 56);
+            
 
             Console.ReadKey();
         }
