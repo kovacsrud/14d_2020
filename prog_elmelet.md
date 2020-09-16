@@ -91,3 +91,7 @@ Egy meglévő osztály továbbfejleszthetünk, vagy specializálhatunk az örök
 Ha szükség van arra, hogy az utód osztályban máshogy viselkedjen az ős osztály metódusa, akkor metódus felülírást alkalmazunk. Ebben az esetben az ős osztályban a **VIRTUAL** kulcsszóval jelezzük, hogy az adott metódus az utód osztályban felülírható.
 Az utód osztályban a felülíró metódusnál az **OVERRIDE** kulcsszó fog szerepelni.
 
+### A property (tulajdonság) a C#-ban
+
+A property egy adatot és a hozzá tartozó lekérdező illetve beállító függvényeket jelenti (3 az 1-ben :) ).
+Alaphelyzetben a property publikus láthatóságú és lekérdezhető ill. beállítható, de saját lekérdező és beállító függvényt is készíthetünk neki.
