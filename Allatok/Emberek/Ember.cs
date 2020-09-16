@@ -14,7 +14,12 @@ namespace Emberek
         public int SzuletesiEv { get; set; }
         public int Magassag { get; set; }
         public int Suly { get; set; }
-        public int Kor { get; set; }
+
+        private int kor;
+        public int Kor {
+            get { return kor; }
+            set { kor = 2020-SzuletesiEv; }
+        }
 
 
         public Ember()
@@ -30,6 +35,9 @@ namespace Emberek
             Suly = suly;
             Kor = kor;
         }
+
+      
+
 
 
 

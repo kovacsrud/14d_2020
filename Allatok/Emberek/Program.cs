@@ -15,10 +15,14 @@ namespace Emberek
             ember.Kor = 26;
             ember.Nev = "Nagy Zénó";
 
-            Ember masikEmber = new Ember("Elek", 1999, 180, 76, 21);
+            Ember masikEmber = new Ember("Elek", 1999, 180, 76,26);
 
             Console.WriteLine(masikEmber.Nev);
             Console.WriteLine(masikEmber.SzuletesiEv);
+            Console.WriteLine(masikEmber.Kor);
+
+
+
 
             Console.ReadKey();
         }
