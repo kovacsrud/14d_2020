@@ -57,5 +57,7 @@ Algoritmus jelölés:
 - mondatszerű leírás
 - UML -> osztálydiagram
 
+# Objektum-orientált szemlélet, programozás
 
+Az objektum összetartozó adatokat és metódusokat jelent. Az objektum egy önálló egység, amely jó meghatározott határokkal rendelkezik.
 
