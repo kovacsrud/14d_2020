@@ -74,4 +74,6 @@ Random veletlenSzam=new Random();
 ```C#
 veletlenSzam.Next(-10,10+1)
 ```
-
+## Egységbe zárás
+Az egységbe zárás(encapsulation) azt jelenti, hogy az osztály adatai kívülről nem érhetőek el, vagy módosíthatóak közvetlenül, azokat
+csak metódusokon keresztül lehet elérni. A metódusok segítségével lehet az adatok értékeit ellenőrzötten beállítani, módosítani.
