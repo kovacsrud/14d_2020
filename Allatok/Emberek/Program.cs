@@ -20,6 +20,8 @@ namespace Emberek
             Console.WriteLine(masikEmber.Nev);
             Console.WriteLine(masikEmber.SzuletesiEv);
             Console.WriteLine(masikEmber.Kor);
+
+            
             Console.WriteLine(masikEmber.ToString());
 
             Ember xEmber = new Ember("Ubul", 2010, 150, 54, 29);

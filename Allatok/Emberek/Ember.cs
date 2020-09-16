@@ -36,6 +36,9 @@ namespace Emberek
             Kor = kor;
         }
 
+        //Felülírjuk az örökölt ToString() metódust, hogy a példány
+        //adatait írathassuk ki vele.
+
         public override string ToString()
         {
             return $"Név:{Nev},Születési év:{SzuletesiEv},Magasság:{Magassag},Kor:{Kor},Súly:{Suly}";
