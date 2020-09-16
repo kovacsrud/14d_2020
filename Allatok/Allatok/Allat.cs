@@ -26,12 +26,12 @@ namespace Allatok
         }
 
         //Metódusok
-        public void Mozog()
+        public virtual void Mozog()
         {
             Console.WriteLine("Az állat mozog");
         }
 
-        public void Eszik()
+        public virtual void Eszik()
         {
             Console.WriteLine("Az állat eszik");
         }

@@ -35,7 +35,8 @@ namespace Allatok
             kutya.Mozog();
 
             Kutya ujKutya = new Kutya(120, "Zénó", 56);
-            
+            ujKutya.Mozog();
+            ujKutya.Eszik();
 
             Console.ReadKey();
         }

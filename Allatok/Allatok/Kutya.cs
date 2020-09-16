@@ -19,11 +19,23 @@ namespace Allatok
         {
             marMagassag = marmagassag;
         }
-             
+               
 
         public void Ugat()
         {
             Console.WriteLine("A kutya ugat");
+        }
+
+        public override void Eszik()
+        {
+            //base.Eszik();
+            Console.WriteLine("A kutya eszik.");
+        }
+
+        public override void Mozog()
+        {
+            //base.Mozog();
+            Console.WriteLine("A kutya mozog");
         }
 
         public void Kapar()
