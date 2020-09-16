@@ -70,4 +70,8 @@ pl.
 ```C#
 Random veletlenSzam=new Random();
 ```
+**a példány használata, egy metódusának hívása**
+```C#
+veletlenSzam.Next(-10,10+1)
+```
 
