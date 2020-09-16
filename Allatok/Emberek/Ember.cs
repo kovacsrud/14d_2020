@@ -27,7 +27,7 @@ namespace Emberek
 
         }
 
-        public Ember(string nev, int szuletesiEv, int magassag, int suly, int kor)
+        public Ember(string nev, int szuletesiEv, int magassag, int suly,int kor)
         {
             Nev = nev;
             SzuletesiEv = szuletesiEv;
@@ -36,7 +36,11 @@ namespace Emberek
             Kor = kor;
         }
 
-      
+        public override string ToString()
+        {
+            return $"Név:{Nev},Születési év:{SzuletesiEv},Magasság:{Magassag},Kor:{Kor},Súly:{Suly}";
+        }
+
 
 
 
