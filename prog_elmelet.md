@@ -77,3 +77,7 @@ veletlenSzam.Next(-10,10+1)
 ## Egységbe zárás
 Az egységbe zárás(encapsulation) azt jelenti, hogy az osztály adatai kívülről nem érhetőek el, vagy módosíthatóak közvetlenül, azokat
 csak metódusokon keresztül lehet elérni. A metódusok segítségével lehet az adatok értékeit ellenőrzötten beállítani, módosítani.
+
+## Konstruktor
+
+A konstruktor metódus feladata a példány kezdeti (vagy akár végleges) értékeinek beállítása. Az osztály példányosításakor automatikusan lefut, nem kell külön hívni.
