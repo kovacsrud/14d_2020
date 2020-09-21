@@ -67,11 +67,11 @@ namespace ListaEsOsztaly
             }
 
             //Az egyes nevekből hány darab szerepel?
-            var nevdb = szemelyek.ToLookup(x=>x.VezetekNev);
+            var nevdb = szemelyek.ToLookup(x=>new{x.VezetekNev,x.Keresztnev});
 
             foreach (var i in nevdb)
             {
-                Console.WriteLine($"{i.Key},{i.Count()}");
+                Console.WriteLine($"{i.Key.VezetekNev},{i.Key.Keresztnev},{i.Count()}");
             }
 
 
