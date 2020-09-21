@@ -58,13 +58,16 @@ namespace ListaEsOsztaly
 
             Console.WriteLine($"{csabai.Keresztnev},{csabai.SzuletesiHely}");
 
-            var csabaiak = szemelyek.FindAll(x=>x.VezetekNev.ToLower()=="Csabai".ToLower());
+            var csabaiak = szemelyek.FindAll(x=>x.VezetekNev.ToLower()=="Csabai".ToLower() && x.SzuletesiHely=="Szeged");
 
 
             foreach (var i in csabaiak)
             {
                 Console.WriteLine($"{i.VezetekNev} {i.Keresztnev},{i.SzuletesiEv},{i.SzuletesiHely}");
             }
+
+            //Az egyes nevekből hány darab szerepel?
+
 
 
             Console.ReadKey();
