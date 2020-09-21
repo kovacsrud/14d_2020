@@ -42,6 +42,31 @@ namespace ListaEsOsztaly
 
             Console.WriteLine($"Lista elemszáma:{szemelyek.Count}");
 
+            //for (int i = 0; i < szemelyek.Count; i++)
+            //{
+            //    Console.WriteLine(szemelyek[i].Keresztnev);
+            //}
+
+            foreach (var i in szemelyek)
+            {
+                Console.WriteLine($"{i.VezetekNev} {i.Keresztnev},{i.SzuletesiEv},{i.SzuletesiHely}");
+            }
+
+            //Hogyan tudunk adatokat visszanyerni a listából?
+
+            var csabai = szemelyek.Find(x=>x.VezetekNev.ToLower()=="Csabai".ToLower());
+
+            Console.WriteLine($"{csabai.Keresztnev},{csabai.SzuletesiHely}");
+
+            var csabaiak = szemelyek.FindAll(x=>x.VezetekNev.ToLower()=="Csabai".ToLower());
+
+
+            foreach (var i in csabaiak)
+            {
+                Console.WriteLine($"{i.VezetekNev} {i.Keresztnev},{i.SzuletesiEv},{i.SzuletesiHely}");
+            }
+
+
             Console.ReadKey();
         }
     }
