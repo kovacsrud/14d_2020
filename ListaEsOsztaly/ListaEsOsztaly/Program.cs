@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ListaEsOsztaly
@@ -14,7 +15,7 @@ namespace ListaEsOsztaly
             string[] keresztnevek = { "Éva", "Anna", "Helga", "János", "Géza", "Xavér" };
             string[] helyisegek = { "Gyula", "Békéscsaba", "Orosháza", "Szeged" };
 
-            List<Szemely> szemelyek = new List<Szemely>();
+            List<MasikSzemely> szemelyek = new List<MasikSzemely>();
             Random rand = new Random();
             //Készítsen osztályt, mely a következő adatokat tárolja:
             //Vezetéknév 
@@ -30,13 +31,14 @@ namespace ListaEsOsztaly
 
             for (int i = 0; i < darab; i++)
             {
-                Szemely szemely = new Szemely(
-                    vezeteknevek[rand.Next(0,vezeteknevek.Length)],
-                    keresztnevek[rand.Next(0, keresztnevek.Length)],
-                    rand.Next(1950,2018+1),
-                    helyisegek[rand.Next(0, helyisegek.Length)]
-                    );
-                szemelyek.Add(szemely);
+                //Szemely szemely = new Szemely(
+                //    vezeteknevek[rand.Next(0,vezeteknevek.Length)],
+                //    keresztnevek[rand.Next(0, keresztnevek.Length)],
+                //    rand.Next(1950,2018+1),
+                //    helyisegek[rand.Next(0, helyisegek.Length)]
+                //    );
+                szemelyek.Add(new MasikSzemely(rand));
+                
             }
 
 
@@ -72,6 +74,25 @@ namespace ListaEsOsztaly
             foreach (var i in nevdb)
             {
                 Console.WriteLine($"{i.Key.VezetekNev},{i.Key.Keresztnev},{i.Count()}");
+            }
+
+
+            Dictionary<int, string> szotar = new Dictionary<int, string>();
+
+            foreach (var i in szemelyek)
+            {
+                if (!szotar.ContainsValue(i.VezetekNev))
+                {
+                    szotar.Add(szotar.Count + 1, i.VezetekNev);
+                }
+            }
+
+            //Egy adott elem kiíratása a szótárból
+            Console.WriteLine(szotar[1]);
+
+            foreach (var i in szotar)
+            {
+                Console.WriteLine($"{i.Key},{i.Value}");
             }
 
 
