@@ -26,7 +26,7 @@ namespace LottoOOP
 
         }
 
-        public void Tippeles()
+        private void Tippeles()
         {
             for (int i = 0; i < tippek.Length; i++)
             {
@@ -43,7 +43,7 @@ namespace LottoOOP
             
         }
 
-        public void Sorsolas()
+        private void Sorsolas()
         {
             for (int i = 0; i < nyeroSzamok.Length; i++)
             {
@@ -59,7 +59,7 @@ namespace LottoOOP
 
         }
 
-        public int Talalatok()
+        private int Talalatok()
         {
             for (int i = 0; i < tippek.Length; i++)
             {
@@ -81,14 +81,23 @@ namespace LottoOOP
             Console.WriteLine();
         }
 
-        public void Tipplista()
+        private void Tipplista()
         {
             Lista(tippek);
         }
 
-        public void NyeroSzamLista()
+        private void NyeroSzamLista()
         {
             Lista(nyeroSzamok);
+        }
+
+        public void Jatek()
+        {
+            Tippeles();
+            Sorsolas();
+            Tipplista();
+            NyeroSzamLista();
+            Console.WriteLine($"Találatok:{Talalatok()}");
         }
 
 
