@@ -95,3 +95,29 @@ Az utód osztályban a felülíró metódusnál az **OVERRIDE** kulcsszó fog sz
 
 A property egy adatot és a hozzá tartozó lekérdező illetve beállító függvényeket jelenti (3 az 1-ben :) ).
 Alaphelyzetben a property publikus láthatóságú és lekérdezhető ill. beállítható, de saját lekérdező és beállító függvényt is készíthetünk neki.
+
+## Absztrakt osztályok
+
+Az ilyen osztály attól absztrakt, hogy bizonyos metódusait még nem lehet megvalósítani azért, mert az osztály jelenlegi formája túl általános. Az absztrakt osztályok pusztán öröklési célokat szolgálnak. Rögzíthető bennük, hogy az utódoknak mely metódusokat kell megvalósítaniuk. Tartalmazhatnak nem absztrakt metódusokat is. Az absztrakt osztály nem példányosítható.
+
+```c#
+public abstract class Ember
+    {
+        public string Nev { get; set; }
+        public int SzuletesiEv { get; set; }
+        public int Magassag { get; set; }
+        public int Suly { get; set; }
+
+        public int GetEletkor()
+        {
+            return 2020 - SzuletesiEv;
+        }
+
+        public abstract void Eszik();
+
+        public abstract void Iszik();
+
+        public abstract void Mozog();
+
+    }
+```
