@@ -121,3 +121,44 @@ public abstract class Ember
 
     }
 ```
+Az absztrakt osztályból leszármaztatott osztály lesz példányosítható, ebben az osztályban meg kell valósítani a korábban absztraktnak deklarált metódusokat. 
+
+```C#
+ public class Sportolo : Ember
+    {
+        public Sportolo(string sportag,string nev,int magassag,int szulev,int suly)
+        {
+            Sportag = sportag;
+            Nev = nev;
+            Magassag = magassag;
+            SzuletesiEv = szulev;
+            Suly = suly;
+        }
+
+        public string Sportag { get; set; }
+
+        public override void Eszik()
+        {
+            Console.WriteLine("A sportoló sokat eszik");
+        }
+
+        public override void Iszik()
+        {
+            Console.WriteLine("A sportoló sokat iszik, alkoholt soha.");
+        }
+
+        public override void Mozog()
+        {
+            Console.WriteLine("A sportoló lendületesen mozog");
+        }
+
+        public void Sportol()
+        {
+            Console.WriteLine($"A sportoló sportok:{Sportag}");
+        }
+    }
+```
+A Sportolo osztály az Ember-ből lett leszármaztatva, ebben override-al felül lettek írva a korábbi absztrakt metódusok.
+
+Számos osztályt származtathatunk az Ember-ből. A Sportolo osztálynak van Mozog() metódusa, és ha leszármaztatunk az Ember-ből egy Nyugdijas-osztályt, abban is lesz. Nyilvánvaló, hogy a Nyugdijas osztály egészen mást fog csinálni, ha a Mozog() metódust meghívjuk, mint a Sportolo osztály esetében. Ezt nevezik az OOP-ben polimorfizmusnak.
+
