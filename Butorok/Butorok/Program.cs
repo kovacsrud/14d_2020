@@ -34,6 +34,13 @@ namespace Butorok
 
             Console.WriteLine($"Elemszám:{szekrenyek.Count}");
 
+            var uveges = szekrenyek.FindAll(x => x.Uveges == true && x.Anyaga=="fém");
+
+            foreach (var i in uveges)         
+            {
+                Console.WriteLine($"{i.Anyaga},{i.KulccsalZarhato},{i.MaxMagassag},{i.Suly},{i.Uveges}");
+            }
+
             Console.ReadKey();
         }
     }
