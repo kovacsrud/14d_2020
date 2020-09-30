@@ -95,3 +95,70 @@ Az utód osztályban a felülíró metódusnál az **OVERRIDE** kulcsszó fog sz
 
 A property egy adatot és a hozzá tartozó lekérdező illetve beállító függvényeket jelenti (3 az 1-ben :) ).
 Alaphelyzetben a property publikus láthatóságú és lekérdezhető ill. beállítható, de saját lekérdező és beállító függvényt is készíthetünk neki.
+
+## Absztrakt osztályok
+
+Az ilyen osztály attól absztrakt, hogy bizonyos metódusait még nem lehet megvalósítani azért, mert az osztály jelenlegi formája túl általános. Az absztrakt osztályok pusztán öröklési célokat szolgálnak. Rögzíthető bennük, hogy az utódoknak mely metódusokat kell megvalósítaniuk. Tartalmazhatnak nem absztrakt metódusokat is. Az absztrakt osztály nem példányosítható.
+
+```c#
+public abstract class Ember
+    {
+        public string Nev { get; set; }
+        public int SzuletesiEv { get; set; }
+        public int Magassag { get; set; }
+        public int Suly { get; set; }
+
+        public int GetEletkor()
+        {
+            return 2020 - SzuletesiEv;
+        }
+
+        public abstract void Eszik();
+
+        public abstract void Iszik();
+
+        public abstract void Mozog();
+
+    }
+```
+Az absztrakt osztályból leszármaztatott osztály lesz példányosítható, ebben az osztályban meg kell valósítani a korábban absztraktnak deklarált metódusokat. 
+
+```C#
+ public class Sportolo : Ember
+    {
+        public Sportolo(string sportag,string nev,int magassag,int szulev,int suly)
+        {
+            Sportag = sportag;
+            Nev = nev;
+            Magassag = magassag;
+            SzuletesiEv = szulev;
+            Suly = suly;
+        }
+
+        public string Sportag { get; set; }
+
+        public override void Eszik()
+        {
+            Console.WriteLine("A sportoló sokat eszik");
+        }
+
+        public override void Iszik()
+        {
+            Console.WriteLine("A sportoló sokat iszik, alkoholt soha.");
+        }
+
+        public override void Mozog()
+        {
+            Console.WriteLine("A sportoló lendületesen mozog");
+        }
+
+        public void Sportol()
+        {
+            Console.WriteLine($"A sportoló sportok:{Sportag}");
+        }
+    }
+```
+A Sportolo osztály az Ember-ből lett leszármaztatva, ebben override-al felül lettek írva a korábbi absztrakt metódusok.
+
+Számos osztályt származtathatunk az Ember-ből. A Sportolo osztálynak van Mozog() metódusa, és ha leszármaztatunk az Ember-ből egy Nyugdijas-osztályt, abban is lesz. Nyilvánvaló, hogy a Nyugdijas osztály egészen mást fog csinálni, ha a Mozog() metódust meghívjuk, mint a Sportolo osztály esetében. Ezt nevezik az OOP-ben polimorfizmusnak.
+
