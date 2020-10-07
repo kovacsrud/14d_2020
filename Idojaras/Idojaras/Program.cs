@@ -40,6 +40,21 @@ namespace Idojaras
                 Console.WriteLine($"{legmelegebb.Honap}.{legmelegebb.Nap}--{legmelegebb.Ora}");
             }
 
+            //Összesítések készítése
+            //Évenként hány sor adat szerepel a listában
+
+            //var evenkenti = adatok.IdoAdatok.ToLookup(x=>x.Ev);
+            var evenkenti = adatok.IdoAdatok.GroupBy(x =>new { x.Ev,x.Honap }).OrderBy(x=>x.Key.Ev).ThenBy(x=>x.Key.Honap).Where(x=>x.Key.Honap==4);
+
+            
+
+            foreach (var i in evenkenti)
+            {
+                Console.WriteLine($"{i.Key.Ev}-{i.Key.Honap},{i.Average(x=>x.Homerseklet)}");
+                
+            }
+
+
 
             Console.ReadKey();
         }
