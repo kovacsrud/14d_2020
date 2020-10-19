@@ -8,6 +8,14 @@ namespace AutoOOP
 {
     public class Orszagut
     {
+        private List<Jarmu> jarmuvek;
+        public List<Jarmu> Jarmuvek { get { return jarmuvek; } }
 
+        public Orszagut(string fajl)
+        {
+            jarmuvek = new List<Jarmu>();
+
+        }
+        
     }
 }
