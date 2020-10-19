@@ -17,12 +17,27 @@ namespace AutoOOP
 
         public override bool GyorsHajtottE(int sebessegkorlat)
         {
-            throw new NotImplementedException();
+            if (sebesseg>sebessegkorlat)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
         }
 
         public bool HaladhatItt(int sebesseg)
         {
-            throw new NotImplementedException();
+            if (maxSebesseg>sebesseg)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
+
     }
 }
