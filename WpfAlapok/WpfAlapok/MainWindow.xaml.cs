@@ -27,6 +27,29 @@ namespace WpfAlapok
            
         }
 
+        private void buttonSzamol_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var a = Convert.ToInt32(textboxA.Text);
+                var b = Convert.ToInt32(textboxB.Text);
+                var c = (double)a / b;
+                labelEredmeny.Content = c;
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Számot kell megadni", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);                
+            }
+            catch (DivideByZeroException ex)
+            {
+                MessageBox.Show("0-val ne osszunk már!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
+
+        }
     }
 }
