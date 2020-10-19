@@ -16,6 +16,10 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-
+        <Label Content="A értéke:" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="B értéke:" Grid.Row="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="textboxA" Grid.Column="1" FontSize="30" Width="100" Height="36"/>
+        <TextBox x:Name="textboxB" Grid.Column="1" Grid.Row="1" FontSize="30" Width="100" Height="36"/>
+        <Button x:Name="buttonSzamol" Width="150" MaxHeight="50" Content="Számolj!" FontSize="30" Grid.Row="2" Grid.ColumnSpan="2" />
     </Grid>
 </Window>
