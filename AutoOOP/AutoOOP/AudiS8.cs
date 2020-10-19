@@ -17,7 +17,18 @@ namespace AutoOOP
 
         public override bool GyorsHajtottE(int sebessegkorlat)
         {
-            throw new NotImplementedException();
+            if (sebesseg>sebessegkorlat && !lezerblokkolo)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Audi:{base.ToString()}";
         }
     }
 }
