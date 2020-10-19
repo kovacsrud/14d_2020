@@ -38,6 +38,9 @@ namespace AutoOOP
             }
             
         }
-
+        public override string ToString()
+        {
+            return $"Robogó:{base.ToString()}";
+        }
     }
 }
