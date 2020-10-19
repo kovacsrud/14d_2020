@@ -10,7 +10,12 @@ namespace AutoOOP
     {
         static void Main(string[] args)
         {
+            Orszagut orszagut = new Orszagut("jarmuadatok.txt");
 
+            foreach (var i in orszagut.Jarmuvek)
+            {
+                Console.WriteLine(i);
+            }
 
             Console.ReadKey();
         }
