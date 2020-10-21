@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -41,5 +42,6 @@
         <WrapPanel x:Name="gombPanel" Grid.Column="1" Grid.Row="1">
             
         </WrapPanel>
+        <Label x:Name="labelGombszoveg" Grid.ColumnSpan="2" FontSize="40" />
     </Grid>
 </Window>
