@@ -32,7 +32,9 @@ namespace WpfKontenerek
                 Button gomb = new Button();
                 gomb.Content = (i + 1);
                 gomb.Width = 40;
+                //feliratkozunk a gomb eseményeire
                 gomb.Click += AktGomb;
+                gomb.MouseDown += AktGomb;
                
                 //A margó trükkös, nem sima int, hanem Thickness
                 gomb.Margin = new Thickness(3);
