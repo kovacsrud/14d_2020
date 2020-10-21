@@ -23,6 +23,19 @@ namespace WpfKontenerek
         public MainWindow()
         {
             InitializeComponent();
+            GombGyar(150);
+        }
+        public void GombGyar(int darab)
+        {
+            for (int i = 0; i < darab; i++)
+            {
+                Button gomb = new Button();
+                gomb.Content = (i + 1);
+                gomb.Width = 40;
+                //A margó trükkös, nem sima int, hanem Thickness
+                gomb.Margin = new Thickness(3);
+                gombPanel.Children.Add(gomb);
+            }
         }
     }
 }
