@@ -32,7 +32,7 @@ namespace WpfKontenerek
                 Button gomb = new Button();
                 gomb.Content = (i + 1);
                 gomb.Width = 40;
-                gomb.MouseDown += AktGomb;
+                gomb.Click += AktGomb;
                
                 //A margó trükkös, nem sima int, hanem Thickness
                 gomb.Margin = new Thickness(3);
@@ -45,6 +45,7 @@ namespace WpfKontenerek
         {
             Button gomb = (Button)sender;
             labelGombszoveg.Content = gomb.Content;
+            gombPanel.Children.Remove(gomb);
         }
     }
 }

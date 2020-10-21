@@ -42,6 +42,6 @@
         <WrapPanel x:Name="gombPanel" Grid.Column="1" Grid.Row="1">
             
         </WrapPanel>
-        <Label x:Name="labelGombszoveg" Grid.ColumnSpan="2" FontSize="40" />
+        <Label x:Name="labelGombszoveg" Grid.Row="2" FontSize="40" />
     </Grid>
 </Window>
