@@ -28,6 +28,22 @@ namespace WpfIdomeres
             InitializeComponent();
             buttonStartStop.Content = "Start";
             stopper = new Stopwatch();
+            stopper.Stop();
+        }
+
+        private void buttonStartStop_Click(object sender, RoutedEventArgs e)
+        {
+            if (stopper.IsRunning)
+            {
+                stopper.Stop();
+                labelElteltIdo.Content = stopper.ElapsedMilliseconds;
+                buttonStartStop.Content = "Start";
+                stopper.Reset();
+            }else
+            {
+                stopper.Start();
+                buttonStartStop.Content = "Stop";
+            }
         }
     }
 }

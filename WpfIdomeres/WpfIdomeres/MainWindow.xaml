@@ -12,7 +12,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label x:Name="labelElteltIdo" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Button x:Name="buttonStartStop" Grid.Row="1" Width="150" Margin="10" />
+        <Button x:Name="buttonStartStop" Grid.Row="1" Width="150" Margin="10" Click="buttonStartStop_Click" />
     </Grid>
     
 </Window>
