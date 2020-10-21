@@ -37,5 +37,12 @@ namespace WpfKontenerek
                 gombPanel.Children.Add(gomb);
             }
         }
+
+        //eseménykezelő  a gombokhoz
+        public void AktGomb(object sender,RoutedEventArgs e)
+        {
+            Button gomb = (Button)sender;
+            labelGombszoveg.Content = gomb.Content;
+        }
     }
 }
