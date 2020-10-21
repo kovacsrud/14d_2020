@@ -36,7 +36,7 @@ namespace WpfIdomeres
             if (stopper.IsRunning)
             {
                 stopper.Stop();
-                labelElteltIdo.Content = stopper.ElapsedMilliseconds;
+                labelElteltIdo.Content = stopper.ElapsedTicks;
                 buttonStartStop.Content = "Start";
                 stopper.Reset();
             }else
