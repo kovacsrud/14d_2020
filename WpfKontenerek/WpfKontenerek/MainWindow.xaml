@@ -38,5 +38,8 @@
             <Button Content="Gomb4" DockPanel.Dock="Right"/>
             <Button Content="Gomb5" Margin="5" DockPanel.Dock="Top"/>
         </DockPanel>
+        <WrapPanel x:Name="gombPanel" Grid.Column="1" Grid.Row="1">
+            
+        </WrapPanel>
     </Grid>
 </Window>
