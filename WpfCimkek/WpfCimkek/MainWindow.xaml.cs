@@ -34,18 +34,24 @@ namespace WpfCimkek
                 Label label = new Label();
                 label.Content = i + 1;
                 label.FontSize = 16;
+
+                label.MouseLeftButtonUp += BalClick;
+                label.MouseRightButtonUp += JobbClick;
+
                 elemek.Children.Add(label);
             }
         }
 
         private void BalClick(object sender,RoutedEventArgs e)
         {
-
+            Label label = (Label)sender;
+            label.Content = Convert.ToInt32(label.Content)+1;
         }
 
         private void JobbClick(object sender, RoutedEventArgs e)
         {
-
+            Label label = (Label)sender;
+            label.Content = Convert.ToInt32(label.Content) - 1;
         }
 
 
