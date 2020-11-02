@@ -34,7 +34,7 @@ namespace WpfDinamikusCimkek
                 cimke.Content = i + 1;
                 cimke.FontSize = 14;
                 cimke.Margin = new Thickness(3);
-
+                cimke.MouseDown += LabelClick;
                 elemek.Children.Add(cimke);
             }
             
