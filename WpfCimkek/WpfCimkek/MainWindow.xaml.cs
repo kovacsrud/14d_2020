@@ -23,6 +23,18 @@ namespace WpfCimkek
         public MainWindow()
         {
             InitializeComponent();
+            //Soklabel(50);
+        }
+
+        public void Soklabel(int db)
+        {
+            for (int i = 0; i < db; i++)
+            {
+                Label label = new Label();
+                label.Content = i + 1;
+                label.FontSize = 16;
+                elemek.Children.Add(label);
+            }
         }
     }
 }
