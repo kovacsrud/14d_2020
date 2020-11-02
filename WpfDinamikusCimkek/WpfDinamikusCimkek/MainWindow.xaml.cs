@@ -23,6 +23,30 @@ namespace WpfDinamikusCimkek
         public MainWindow()
         {
             InitializeComponent();
+            Sokcimke(150);
         }
+
+        public void Sokcimke(int db)
+        {
+            for (int i = 0; i < db; i++)
+            {
+                Label cimke = new Label();
+                cimke.Content = i + 1;
+                cimke.FontSize = 14;
+                cimke.Margin = new Thickness(3);
+
+                elemek.Children.Add(cimke);
+            }
+            
+        }
+
+        public void LabelClick(object sender, RoutedEventArgs e)
+        {
+            Label cimke = (Label)sender;
+            cimke.Foreground = Brushes.Red;
+            cimke.Background = Brushes.Gold;
+
+        }
+
     }
 }
