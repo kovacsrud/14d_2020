@@ -37,6 +37,7 @@ namespace WpfCimkek
 
                 label.MouseLeftButtonUp += BalClick;
                 label.MouseRightButtonUp += JobbClick;
+               
 
                 elemek.Children.Add(label);
             }
