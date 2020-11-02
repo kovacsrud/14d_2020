@@ -15,6 +15,10 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        
+        <TextBox x:Name="textBoxDarab" FontSize="25" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Button x:Name="buttonLetrehoz" Content="Létrehozás" Margin="20" FontSize="16" Grid.Column="1" />
+        <WrapPanel x:Name="elemek" Grid.Row="1" Grid.ColumnSpan="2">
+            
+        </WrapPanel>
     </Grid>
 </Window>
