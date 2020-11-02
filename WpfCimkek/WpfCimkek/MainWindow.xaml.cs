@@ -28,6 +28,7 @@ namespace WpfCimkek
 
         public void Soklabel(int db)
         {
+            elemek.Children.Clear();
             for (int i = 0; i < db; i++)
             {
                 Label label = new Label();
@@ -35,6 +36,30 @@ namespace WpfCimkek
                 label.FontSize = 16;
                 elemek.Children.Add(label);
             }
+        }
+
+        private void BalClick(object sender,RoutedEventArgs e)
+        {
+
+        }
+
+        private void JobbClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private void buttonLetrehoz_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Soklabel(Convert.ToInt32(textBoxDarab.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);                
+            }
+            
         }
     }
 }
