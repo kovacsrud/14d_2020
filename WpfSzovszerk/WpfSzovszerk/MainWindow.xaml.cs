@@ -35,7 +35,7 @@ namespace WpfSzovszerk
                 if (dialog.ShowDialog() == true)
                 {
                     szoveg.Text = File.ReadAllText(dialog.FileName, Encoding.Default);
-                    
+                    this.Title = dialog.FileName.Split('\\').Last();
                 }
             }
             catch(DirectoryNotFoundException ex)
