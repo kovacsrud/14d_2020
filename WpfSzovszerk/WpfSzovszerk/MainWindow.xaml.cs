@@ -35,6 +35,7 @@ namespace WpfSzovszerk
                 if (dialog.ShowDialog() == true)
                 {
                     szoveg.Text = File.ReadAllText(dialog.FileName, Encoding.Default);
+                    
                 }
             }
             catch(DirectoryNotFoundException ex)
@@ -50,6 +51,22 @@ namespace WpfSzovszerk
                 MessageBox.Show(ex.Message, "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);                
             }
             
+        }
+
+        private void buttonMentes_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                if (dialog.ShowDialog()==true)
+                {
+                    File.WriteAllText(dialog.FileName, szoveg.Text, Encoding.Default);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);                
+            }
         }
     }
 }

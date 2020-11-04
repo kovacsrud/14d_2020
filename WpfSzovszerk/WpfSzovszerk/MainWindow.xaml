@@ -13,8 +13,8 @@
         </Grid.RowDefinitions>
         <WrapPanel>
             <Button x:Name="buttonBetolt" Content="Megnyitás" Margin="10" Click="buttonBetolt_Click" />
-            <Button x:Name="buttonMentes" Content="Mentés" Margin="10" />
+            <Button x:Name="buttonMentes" Content="Mentés" Margin="10" Click="buttonMentes_Click" />
         </WrapPanel>
-        <TextBox x:Name="szoveg" Grid.Row="1"/>
+        <TextBox x:Name="szoveg" AcceptsReturn="True" AcceptsTab="True" MinLines="30" VerticalScrollBarVisibility="Auto" Grid.Row="1"/>
     </Grid>
 </Window>
