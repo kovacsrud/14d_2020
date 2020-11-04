@@ -12,7 +12,7 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <WrapPanel>
-            <Button x:Name="buttonBetolt" Content="Megnyitás" Margin="10" />
+            <Button x:Name="buttonBetolt" Content="Megnyitás" Margin="10" Click="buttonBetolt_Click" />
             <Button x:Name="buttonMentes" Content="Mentés" Margin="10" />
         </WrapPanel>
         <TextBox x:Name="szoveg" Grid.Row="1"/>

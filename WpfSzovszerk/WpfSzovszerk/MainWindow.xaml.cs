@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,27 @@ namespace WpfSzovszerk
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void buttonBetolt_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == true)
+                {
+                    szoveg.Text = File.ReadAllText(dialog.FileName, Encoding.Default);
+                }
+            }
+            catch(FileNotFoundException ex)
+            {
+                MessageBox.Show("A fájl nem található!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);                
+            }
+            
         }
     }
 }
