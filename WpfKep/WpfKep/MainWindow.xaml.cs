@@ -29,6 +29,10 @@ namespace WpfKep
         private void buttonBetolt_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "képfájlok (*.jpg;*.jpeg;*.gif)|*.jpg;*.jpeg;*.gif|minden fájl (*.*)|*.*";
+            dialog.FilterIndex = 2;
+            dialog.InitialDirectory="d:\\";
+            
             if (dialog.ShowDialog()==true)
             {
                 try
