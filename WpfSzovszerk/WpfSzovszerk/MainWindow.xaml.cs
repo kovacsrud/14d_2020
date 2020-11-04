@@ -37,6 +37,10 @@ namespace WpfSzovszerk
                     szoveg.Text = File.ReadAllText(dialog.FileName, Encoding.Default);
                 }
             }
+            catch(DirectoryNotFoundException ex)
+            {
+                MessageBox.Show("A mappa nem található!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             catch(FileNotFoundException ex)
             {
                 MessageBox.Show("A fájl nem található!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);
