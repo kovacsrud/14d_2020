@@ -37,8 +37,14 @@ namespace WpfKep
             {
                 try
                 {
+                    Image kep = new Image();
+                       
                     BitmapImage bitmap = new BitmapImage(new Uri(dialog.FileName));
                     kep.Source = bitmap;
+                    fogrid.Children.Add(kep);
+                    Grid.SetRow(kep, 0);
+                  
+                    
                 }
                 catch (NotSupportedException ex)
                 {

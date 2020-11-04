@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WpfKep"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid x:Name="fogrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="kep" Stretch="Uniform"  />
+        <!--<Image x:Name="kep" Stretch="Uniform"  />-->
         <Button x:Name="buttonBetolt" Content="Betöltés" Grid.Row="1" Width="100" Click="buttonBetolt_Click" />
     </Grid>
 </Window>
