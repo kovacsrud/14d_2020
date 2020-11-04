@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
         
+        <WrapPanel x:Name="panelKepek">
+            
+        </WrapPanel>
+        <Button x:Name="buttonBetolt" Content="Betölt" Width="100" Margin="20" Grid.Row="1" Click="buttonBetolt_Click"/>
     </Grid>
 </Window>
