@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace WpfKep
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void buttonBetolt_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (dialog.ShowDialog()==true)
+            {
+                BitmapImage bitmap = new BitmapImage(new Uri(dialog.FileName));
+                kep.Source = bitmap;
+            }
         }
     }
 }
