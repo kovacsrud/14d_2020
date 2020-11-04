@@ -37,11 +37,13 @@ namespace WpfMultiPic
                     var files = dialog.FileNames;
                     for (int i = 0; i < files.Length; i++)
                     {
-                        Image kep = new Image();
-                        BitmapImage bitmap = new BitmapImage(new Uri(files[i]));
-                        kep.Source = bitmap;
-                        kep.Stretch = Stretch.Uniform;
-                        kep.StretchDirection = StretchDirection.Both;
+                        //Image kep = new Image();
+                        //BitmapImage bitmap = new BitmapImage(new Uri(files[i]));
+                        //kep.Source = bitmap;
+                        //kep.Stretch = Stretch.Uniform;
+                        //kep.StretchDirection = StretchDirection.Both;
+                        KepTarolo kep = new KepTarolo(files[i]);
+                        kep.Width = this.Width/5;
                         panelKepek.Children.Add(kep);
                     }
                 }
