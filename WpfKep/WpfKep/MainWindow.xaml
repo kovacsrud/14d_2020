@@ -12,6 +12,6 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image x:Name="kep" />
-        <Button x:Name="buttonBetolt" Content="Betöltés" Grid.Row="1" Width="100" />
+        <Button x:Name="buttonBetolt" Content="Betöltés" Grid.Row="1" Width="100" Click="buttonBetolt_Click" />
     </Grid>
 </Window>

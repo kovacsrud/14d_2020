@@ -31,8 +31,21 @@ namespace WpfKep
             OpenFileDialog dialog = new OpenFileDialog();
             if (dialog.ShowDialog()==true)
             {
-                BitmapImage bitmap = new BitmapImage(new Uri(dialog.FileName));
-                kep.Source = bitmap;
+                try
+                {
+                    BitmapImage bitmap = new BitmapImage(new Uri(dialog.FileName));
+                    kep.Source = bitmap;
+                }
+                catch (NotSupportedException ex)
+                {
+                    MessageBox.Show("Nem támogatott fájl!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
+              
             }
         }
     }
