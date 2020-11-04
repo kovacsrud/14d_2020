@@ -11,10 +11,13 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <WrapPanel x:Name="panelKepek">
             
         </WrapPanel>
+        </ScrollViewer>
+
         <Button x:Name="buttonBetolt" Content="Betölt" Width="100" Margin="20" Grid.Row="1" Click="buttonBetolt_Click"/>
     </Grid>
 </Window>

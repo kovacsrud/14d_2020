@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,30 @@ namespace WpfMultiPic
 
         private void buttonBetolt_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;
+                if (dialog.ShowDialog()==true)
+                {
+                    var files = dialog.FileNames;
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        Image kep = new Image();
+                        BitmapImage bitmap = new BitmapImage(new Uri(files[i]));
+                        kep.Source = bitmap;
+                        kep.Stretch = Stretch.Uniform;
+                        kep.StretchDirection = StretchDirection.Both;
+                        panelKepek.Children.Add(kep);
+                    }
+                }
+                
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba!", MessageBoxButton.OK, MessageBoxImage.Error);                
+            }
         }
     }
 }
