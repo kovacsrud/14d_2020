@@ -8,7 +8,7 @@ namespace WpfDatagrid
 {
     public class Nev
     {
-        public string Vezeteknek { get; set; }
+        public string Vezeteknev { get; set; }
         public string Keresztnev { get; set; }
         public int SzuletesiEv { get; set; }
         public string SzuletesiHely { get; set; }
