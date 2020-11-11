@@ -10,8 +10,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Image x:Name="kep" />
-        <Button x:Name="buttonBetolt" Content="Betöltés" Width="100" Grid.Row="1" Click="buttonBetolt_Click" />
+        <Button x:Name="buttonBetolt" Content="Betöltés" Width="100" Grid.Row="1" Margin="10" Click="buttonBetolt_Click" />
+        <Button x:Name="buttonStartStop" Content="Start" Width="100" Grid.Row="2" Margin="10" Click="buttonStartStop_Click" />
     </Grid>
 </Window>
