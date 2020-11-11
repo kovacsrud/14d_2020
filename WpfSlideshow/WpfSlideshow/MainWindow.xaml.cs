@@ -25,12 +25,14 @@ namespace WpfSlideshow
         OpenFileDialog openDialog;
         string[] fajlok;
         DispatcherTimer timer;
+        int szamlalo;
 
         public MainWindow()
         {
             InitializeComponent();
             timer = new DispatcherTimer(TimeSpan.FromMilliseconds(1000),DispatcherPriority.Normal,Kepvaltas,Dispatcher.CurrentDispatcher);
             timer.Stop();
+            szamlalo = 0;
         }
 
         private void buttonBetolt_Click(object sender, RoutedEventArgs e)
@@ -47,7 +49,12 @@ namespace WpfSlideshow
 
         private void Kepvaltas(object sender,EventArgs e)
         {
-
+            kep.Source = new BitmapImage(new Uri(fajlok[szamlalo]));
+            szamlalo++;
+            if (szamlalo>fajlok.Length)
+            {
+                szamlalo = 0;
+            }
         }
     }
 }
