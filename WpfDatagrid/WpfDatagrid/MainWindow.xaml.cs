@@ -28,6 +28,7 @@ namespace WpfDatagrid
             InitializeComponent();
             nevsor = new Nevsor("nevsor_20k.txt");
             Debug.WriteLine(nevsor.NevSor.Count);
+            datagridAdatok.ItemsSource = nevsor.NevSor;
         }
     }
 }
