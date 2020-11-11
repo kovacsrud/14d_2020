@@ -51,7 +51,7 @@ namespace WpfSlideshow
         {
             kep.Source = new BitmapImage(new Uri(fajlok[szamlalo]));
             szamlalo++;
-            if (szamlalo>fajlok.Length)
+            if (szamlalo>=fajlok.Length)
             {
                 szamlalo = 0;
             }
