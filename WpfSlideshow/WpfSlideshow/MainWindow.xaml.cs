@@ -29,6 +29,25 @@ namespace WpfSlideshow
         public MainWindow()
         {
             InitializeComponent();
+            timer = new DispatcherTimer(TimeSpan.FromMilliseconds(1000),DispatcherPriority.Normal,Kepvaltas,Dispatcher.CurrentDispatcher);
+            timer.Stop();
+        }
+
+        private void buttonBetolt_Click(object sender, RoutedEventArgs e)
+        {
+            openDialog = new OpenFileDialog();
+            openDialog.Multiselect = true;
+            if (openDialog.ShowDialog()==true)
+            {
+                fajlok = openDialog.FileNames;
+                timer.Start();
+            }
+            
+        }
+
+        private void Kepvaltas(object sender,EventArgs e)
+        {
+
         }
     }
 }
