@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,13 @@ namespace WpfDatagrid
     /// </summary>
     public partial class MainWindow : Window
     {
+        Nevsor nevsor;
+
         public MainWindow()
         {
             InitializeComponent();
+            nevsor = new Nevsor("nevsor_20k.txt");
+            Debug.WriteLine(nevsor.NevSor.Count);
         }
     }
 }
