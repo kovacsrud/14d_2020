@@ -33,5 +33,17 @@ namespace WpfNevsorBind
         {
             veznevDatagrid.DataContext = nevsorAdatok.VezetekNevKereses(textboxKereses.Text);
         }
+
+        private void buttonKeresEv_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                veznevDatagrid.DataContext = nevsorAdatok.EvKereses(Convert.ToInt32(textboxKereses.Text));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

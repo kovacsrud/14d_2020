@@ -45,5 +45,12 @@ namespace WpfNevsorBind
             var eredmeny = nevsor.FindAll(x=>x.Vezeteknev.ToLower().StartsWith(keres.ToLower()));
             return eredmeny;
         }
+
+        public List<Nev> EvKereses(int ev)
+        {
+            var eredmeny = nevsor.FindAll(x => x.SzuletesiEv == ev);
+            return eredmeny;
+
+        }
     }
 }

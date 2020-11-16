@@ -33,6 +33,7 @@
                 <WrapPanel>
                 <TextBox x:Name="textboxKereses"  Width="150" FontSize="25" />
                     <Button x:Name="buttonKeres"  Content="Keresés"  Width="100" Click="buttonKeres_Click" />
+                    <Button x:Name="buttonKeresEv"  Content="Keresés év szerint"  Width="100" Click="buttonKeresEv_Click" />
                 </WrapPanel>
                 <DataGrid x:Name="veznevDatagrid" ItemsSource="{Binding}" AutoGenerateColumns="False" ColumnWidth="*" Grid.Row="1">
                     <DataGrid.Columns>
