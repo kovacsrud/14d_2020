@@ -80,5 +80,13 @@ namespace WpfIdojaras
 
             return adatok;
         }
+
+        public IOrderedEnumerable<IdojarasAdat> GetAdatok(int ev,int honap)
+        {
+            var adatok = idojarasadatok.FindAll(x => x.Ev == ev && x.Honap==honap).OrderBy(x => x.Honap).ThenBy(x => x.Nap).ThenBy(x => x.Ora);
+
+            return adatok;
+        }
+        
     }
 }

@@ -27,12 +27,20 @@ namespace WpfIdojaras
             idojarasadatok = new IdojarasAdatok("idojaras.csv");
             listboxEv.ItemsSource = idojarasadatok.GetEvek();
             listboxEv.SelectionChanged += KivalasztottEv;
+            listboxHonap.SelectionChanged += KivalasztottHonap;
         }
 
         private void KivalasztottEv(object sender,RoutedEventArgs e)
         {
             datagridAdatok.ItemsSource = idojarasadatok.GetAdatok(Convert.ToInt32(listboxEv.SelectedItem));
             listboxHonap.ItemsSource = idojarasadatok.GetHonapok(Convert.ToInt32(listboxEv.SelectedItem));
+        }
+
+        private void KivalasztottHonap(object sender,RoutedEventArgs e)
+        {
+            var ev = Convert.ToInt32(listboxEv.SelectedItem);
+            var honap= Convert.ToInt32(listboxHonap.SelectedItem);
+            datagridAdatok.ItemsSource= idojarasadatok.GetAdatok(ev,honap);
         }
     }
 }
