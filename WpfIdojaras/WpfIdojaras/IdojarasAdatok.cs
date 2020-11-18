@@ -73,6 +73,20 @@ namespace WpfIdojaras
             return honapok;
         }
 
+        public List<int> GetNapok(int ev,int honap)
+        {
+            List<int> napok = new List<int>();
+            var aktualisEvHonap = idojarasadatok.FindAll(x => x.Ev == ev && x.Honap == honap);
+            var napoklookup = aktualisEvHonap.ToLookup(x => x.Nap).OrderBy(x => x.Key);
+
+            foreach (var i in napoklookup)
+            {
+                napok.Add(i.Key);
+            }
+
+            return napok;
+        }
+
         public IOrderedEnumerable<IdojarasAdat> GetAdatok(int ev)
         {
             //List<IdojarasAdat> adatok = new List<IdojarasAdat>();
@@ -84,6 +98,13 @@ namespace WpfIdojaras
         public IOrderedEnumerable<IdojarasAdat> GetAdatok(int ev,int honap)
         {
             var adatok = idojarasadatok.FindAll(x => x.Ev == ev && x.Honap==honap).OrderBy(x => x.Honap).ThenBy(x => x.Nap).ThenBy(x => x.Ora);
+
+            return adatok;
+        }
+
+        public IOrderedEnumerable<IdojarasAdat> GetAdatok(int ev,int honap,int nap)
+        {
+            var adatok=idojarasadatok.FindAll(x=>x.Ev==ev && x.Honap==honap && x.Nap==nap).OrderBy(x => x.Honap).ThenBy(x => x.Nap).ThenBy(x => x.Ora);
 
             return adatok;
         }

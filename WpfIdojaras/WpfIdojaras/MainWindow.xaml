@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <ListBox x:Name="listboxEv" />
         <ListBox x:Name="listboxHonap" Grid.Column="1"/>
-        <ListBox x:Name="lisboxNapok" Grid.Column="2"/>
+        <ListBox x:Name="listboxNapok" Grid.Column="2"/>
         <DataGrid x:Name="datagridAdatok" Grid.Row="1" Grid.ColumnSpan="3" ColumnWidth="*" />
     </Grid>
 </Window>

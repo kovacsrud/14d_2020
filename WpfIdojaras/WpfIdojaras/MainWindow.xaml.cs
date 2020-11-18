@@ -28,6 +28,7 @@ namespace WpfIdojaras
             listboxEv.ItemsSource = idojarasadatok.GetEvek();
             listboxEv.SelectionChanged += KivalasztottEv;
             listboxHonap.SelectionChanged += KivalasztottHonap;
+            listboxNapok.SelectionChanged += KivalasztottNap;
         }
 
         private void KivalasztottEv(object sender,RoutedEventArgs e)
@@ -41,6 +42,16 @@ namespace WpfIdojaras
             var ev = Convert.ToInt32(listboxEv.SelectedItem);
             var honap= Convert.ToInt32(listboxHonap.SelectedItem);
             datagridAdatok.ItemsSource= idojarasadatok.GetAdatok(ev,honap);
+            listboxNapok.ItemsSource = idojarasadatok.GetNapok(ev,honap);
+        }
+
+        private void KivalasztottNap(object sender,RoutedEventArgs e)
+        {
+            var ev = Convert.ToInt32(listboxEv.SelectedItem);
+            var honap = Convert.ToInt32(listboxHonap.SelectedItem);
+            var nap = Convert.ToInt32(listboxNapok.SelectedItem);
+
+            datagridAdatok.ItemsSource = idojarasadatok.GetAdatok(ev, honap, nap);
         }
     }
 }
