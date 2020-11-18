@@ -48,7 +48,7 @@ namespace WpfIdojaras
         {
             List<int> evek = new List<int>();
 
-            var eveklookup = idojarasadatok.ToLookup(x=>x.Ev);
+            var eveklookup = idojarasadatok.ToLookup(x=>x.Ev).OrderBy(x=>x.Key);
 
             foreach (var i in eveklookup)
             {
@@ -57,6 +57,14 @@ namespace WpfIdojaras
 
 
             return evek;
+        }
+
+        public List<IdojarasAdat> GetAdatok(int ev)
+        {
+            //List<IdojarasAdat> adatok = new List<IdojarasAdat>();
+            var adatok = idojarasadatok.FindAll(x => x.Ev == ev);
+
+            return adatok;
         }
     }
 }
