@@ -20,9 +20,12 @@ namespace WpfIdojaras
     /// </summary>
     public partial class MainWindow : Window
     {
+        IdojarasAdatok idojarasadatok;
         public MainWindow()
         {
             InitializeComponent();
+            idojarasadatok = new IdojarasAdatok("idojaras.csv");
+            listboxEv.ItemsSource = idojarasadatok.GetEvek();
         }
     }
 }
