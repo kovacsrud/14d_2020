@@ -20,9 +20,16 @@ namespace WpfTwoWayBind
     /// </summary>
     public partial class MainWindow : Window
     {
+        BindOsztaly bindosztaly;
         public MainWindow()
         {
             InitializeComponent();
+            bindosztaly = new BindOsztaly(50);
+            slider.DataContext = bindosztaly;
+            textblock.DataContext = bindosztaly;
+            progressbar.DataContext = bindosztaly;
+
+
         }
     }
 }

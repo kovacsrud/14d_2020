@@ -22,6 +22,11 @@ namespace WpfTwoWayBind
             }
         }
 
+        public BindOsztaly(int ertek)
+        {
+            BindAdat = ertek;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void Prop_Changed(string propnev)

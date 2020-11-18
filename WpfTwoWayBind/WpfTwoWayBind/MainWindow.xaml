@@ -12,8 +12,8 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Slider x:Name="slider" Width="500" Minimum="0" Maximum="100" IsSnapToTickEnabled="True"/>
-        <TextBlock x:Name="textblock" Width="200" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" />
-        <ProgressBar x:Name="progressbar" Margin="50" Grid.Row="2" />
+        <Slider x:Name="slider" Value="{Binding BindAdat,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="500" Minimum="0" Maximum="100" IsSnapToTickEnabled="True"/>
+        <TextBlock x:Name="textblock" Text="{Binding BindAdat,Mode=OneWay}" Width="200" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" />
+        <ProgressBar x:Name="progressbar" Value="{Binding BindAdat,Mode=OneWay}" Margin="50" Grid.Row="2" />
     </Grid>
 </Window>
