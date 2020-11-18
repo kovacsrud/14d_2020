@@ -59,6 +59,20 @@ namespace WpfIdojaras
             return evek;
         }
 
+        public List<int> GetHonapok(int ev)
+        {
+            List<int> honapok = new List<int>();
+            var aktualisEv = idojarasadatok.FindAll(x=>x.Ev==ev);
+            var honapoklookup = aktualisEv.ToLookup(x=>x.Honap).OrderBy(x=>x.Key);
+
+            foreach (var i in honapoklookup)
+            {
+                honapok.Add(i.Key);
+            }
+
+            return honapok;
+        }
+
         public IOrderedEnumerable<IdojarasAdat> GetAdatok(int ev)
         {
             //List<IdojarasAdat> adatok = new List<IdojarasAdat>();

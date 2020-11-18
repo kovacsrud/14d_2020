@@ -32,6 +32,7 @@ namespace WpfIdojaras
         private void KivalasztottEv(object sender,RoutedEventArgs e)
         {
             datagridAdatok.ItemsSource = idojarasadatok.GetAdatok(Convert.ToInt32(listboxEv.SelectedItem));
+            listboxHonap.ItemsSource = idojarasadatok.GetHonapok(Convert.ToInt32(listboxEv.SelectedItem));
         }
     }
 }
