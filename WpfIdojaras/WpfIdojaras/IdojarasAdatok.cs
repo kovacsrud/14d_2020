@@ -59,10 +59,10 @@ namespace WpfIdojaras
             return evek;
         }
 
-        public List<IdojarasAdat> GetAdatok(int ev)
+        public IOrderedEnumerable<IdojarasAdat> GetAdatok(int ev)
         {
             //List<IdojarasAdat> adatok = new List<IdojarasAdat>();
-            var adatok = idojarasadatok.FindAll(x => x.Ev == ev);
+            var adatok = idojarasadatok.FindAll(x => x.Ev == ev).OrderBy(x=>x.Honap).ThenBy(x=>x.Nap).ThenBy(x=>x.Ora);
 
             return adatok;
         }

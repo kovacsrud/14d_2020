@@ -26,6 +26,12 @@ namespace WpfIdojaras
             InitializeComponent();
             idojarasadatok = new IdojarasAdatok("idojaras.csv");
             listboxEv.ItemsSource = idojarasadatok.GetEvek();
+            listboxEv.SelectionChanged += KivalasztottEv;
+        }
+
+        private void KivalasztottEv(object sender,RoutedEventArgs e)
+        {
+            datagridAdatok.ItemsSource = idojarasadatok.GetAdatok(Convert.ToInt32(listboxEv.SelectedItem));
         }
     }
 }
