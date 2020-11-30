@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,6 +34,22 @@ namespace Serialize
             }
 
             foreach (var i in betolt)
+            {
+                Console.WriteLine($"{i.Nev},{i.Pontszam}");
+            }
+
+            var jsonSerializer = new JsonSerializer();
+            var jsonFajl = new JsonTextWriter(new StreamWriter("toplista.json"));
+
+            jsonSerializer.Serialize(jsonFajl, toplista);
+            jsonFajl.Close();
+
+            JsonReader jsonBetolt = new JsonTextReader(new StreamReader("toplista.json"));
+
+            List<ToplistaElem> jsonVissza=jsonSerializer.Deserialize<List<ToplistaElem>>(jsonBetolt);
+            jsonBetolt.Close();
+
+            foreach (var i in jsonVissza)
             {
                 Console.WriteLine($"{i.Nev},{i.Pontszam}");
             }
