@@ -28,8 +28,19 @@ namespace JsonEsXml
 
             while (reader.Read())
             {
-                Console.WriteLine($"{reader.TokenType},{reader.ValueType},{reader.Value}");
+                //Console.WriteLine($"{reader.TokenType},{reader.ValueType},{reader.Value}");
+                //Console.WriteLine($"{reader.Value}");
             }
+
+            JObject colors = JObject.Parse(jsonFajl);
+
+            Console.WriteLine(colors["colors"][0]["color"]);
+            Console.WriteLine(colors["colors"][2]["color"]);
+            Console.WriteLine(colors["colors"][3]["code"]["rgba"][0]);
+            Console.WriteLine(colors["colors"][3]["code"]["hex"]);
+
+            var jsColors = colors.SelectToken("colors");
+            Console.WriteLine(jsColors[0]["color"]);
 
 
             Console.ReadKey();
