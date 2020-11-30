@@ -24,7 +24,7 @@ namespace WpfTwoWayBind
         public MainWindow()
         {
             InitializeComponent();
-            bindosztaly = new BindOsztaly(50);
+            bindosztaly = new BindOsztaly(0);
             slider.DataContext = bindosztaly;
             textblock.DataContext = bindosztaly;
             progressbar.DataContext = bindosztaly;
