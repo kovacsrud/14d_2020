@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel x:Name="apiAdatok" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel>
+            <TextBox x:Name="textBoxIp" Width="300" FontSize="30" />
+            <Button x:Name="buttonIp" Content="Lekérdezés" FontSize="20" Click="buttonIp_Click" />
+        </WrapPanel>
+        <StackPanel x:Name="apiAdatok" Grid.Row="1" />
     </Grid>
 </Window>

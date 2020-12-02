@@ -29,13 +29,8 @@ namespace WpfIpStack
         public MainWindow()
         {
             InitializeComponent();
-            GetData("82.144.165.119");
-            Debug.WriteLine(jsonData["country_name"]);
-            Debug.WriteLine(jsonData["region_code"]);
-            Debug.WriteLine(jsonData["region_name"]);
-            Debug.WriteLine(jsonData["city"]);
-            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["country_name"],30));
-            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["region_name"], 20));
+            
+                        
         }
 
         public TextBlock DataToTextBlock(string data,int fontsize)
@@ -50,6 +45,18 @@ namespace WpfIpStack
         public void GetData(string ipAddress)
         {
             jsonData = JObject.Parse(new WebClient().DownloadString($"http://api.ipstack.com/{ipAddress}?access_key={apiKey}"));
+        }
+
+        private void buttonIp_Click(object sender, RoutedEventArgs e)
+        {
+            GetData(textBoxIp.Text);
+            Debug.WriteLine(jsonData);
+            apiAdatok.Children.Clear();
+            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["ip"], 20));
+            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["continent_name"], 20));
+            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["country_name"], 30));
+            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["region_name"], 20));
+            //apiAdatok.Children.Add(DataToTextBlock((string)jsonData["currency"], 20));
         }
     }
 }
