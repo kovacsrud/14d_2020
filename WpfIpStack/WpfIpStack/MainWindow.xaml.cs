@@ -89,6 +89,9 @@ namespace WpfIpStack
                 apiAdatok.Children.Add(DataToTextBlock((string)jsonWeather["main"]["temp"], 20));
                 apiAdatok.Children.Add(DataToTextBlock((string)jsonWeather["dt"], 20));
                 apiAdatok.Children.Add(DataToTextBlock($"{DateTimeOffset.FromUnixTimeSeconds((long)jsonWeather["dt"]).DateTime}",20));
+                apiAdatok.Children.Add(DataToTextBlock($"{DateTimeOffset.FromUnixTimeSeconds((long)jsonWeather["sys"]["sunrise"]).DateTime}", 20));
+                apiAdatok.Children.Add(DataToTextBlock($"{DateTimeOffset.FromUnixTimeSeconds((long)jsonWeather["sys"]["sunset"]).DateTime}", 20));
+
                 imageNetKep.Source = KepFromUrl("https://taszi.hu/kepek/kepkezelo/large/2828.jpg");
                 
                 Debug.WriteLine(jsonWeather);
