@@ -25,6 +25,7 @@ namespace WpfIpStack
     public partial class MainWindow : Window
     {
         JObject jsonData;
+        JObject jsonWeather;
 
         String apiKey = "57e7f2daa88da7119dc6c575f1232c0f";
         String weatherApiKey = "cee47ae14c4e2b23dd70220929479c28";
@@ -50,6 +51,12 @@ namespace WpfIpStack
             jsonData = JObject.Parse(new WebClient().DownloadString($"http://api.ipstack.com/{ipAddress}?access_key={apiKey}"));
         }
 
+        public void GetWeatherData(string varosnev)
+        {
+            jsonWeather = JObject.Parse(new WebClient().DownloadString($"http://api.openweathermap.org/data/2.5/weather?q={varosnev}&appid={weatherApiKey}&units=metric"));
+        }
+
+
         public BitmapImage KepFromUrl(string address)
         {
             WebClient kepclient = new WebClient();
@@ -71,13 +78,19 @@ namespace WpfIpStack
             try
             {
                 GetData(textBoxIp.Text);
+                GetWeatherData((string)jsonData["city"]);
                 Debug.WriteLine(jsonData);
                 apiAdatok.Children.Clear();
                 apiAdatok.Children.Add(DataToTextBlock((string)jsonData["ip"], 20));
                 apiAdatok.Children.Add(DataToTextBlock((string)jsonData["continent_name"], 20));
                 apiAdatok.Children.Add(DataToTextBlock((string)jsonData["country_name"], 30));
                 apiAdatok.Children.Add(DataToTextBlock((string)jsonData["region_name"], 20));
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonData["city"], 20));
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonWeather["main"]["temp"], 20));
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonWeather["dt"], 20));
                 imageNetKep.Source = KepFromUrl("https://taszi.hu/kepek/kepkezelo/large/2828.jpg");
+                
+                Debug.WriteLine(jsonWeather);
             }
             catch(Newtonsoft.Json.JsonReaderException ex)
             {
