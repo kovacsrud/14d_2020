@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -47,16 +48,48 @@ namespace WpfIpStack
             jsonData = JObject.Parse(new WebClient().DownloadString($"http://api.ipstack.com/{ipAddress}?access_key={apiKey}"));
         }
 
+        public BitmapImage KepFromUrl(string address)
+        {
+            WebClient kepclient = new WebClient();
+            byte[] kepdata = kepclient.DownloadData(address);
+
+            MemoryStream ms = new MemoryStream(kepdata);
+
+            BitmapImage bitmapKep = new BitmapImage();
+            bitmapKep.BeginInit();
+            bitmapKep.StreamSource = ms;
+            bitmapKep.EndInit();
+
+            return bitmapKep;
+
+        }
+
         private void buttonIp_Click(object sender, RoutedEventArgs e)
         {
-            GetData(textBoxIp.Text);
-            Debug.WriteLine(jsonData);
-            apiAdatok.Children.Clear();
-            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["ip"], 20));
-            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["continent_name"], 20));
-            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["country_name"], 30));
-            apiAdatok.Children.Add(DataToTextBlock((string)jsonData["region_name"], 20));
-            //apiAdatok.Children.Add(DataToTextBlock((string)jsonData["currency"], 20));
+            try
+            {
+                GetData(textBoxIp.Text);
+                Debug.WriteLine(jsonData);
+                apiAdatok.Children.Clear();
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonData["ip"], 20));
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonData["continent_name"], 20));
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonData["country_name"], 30));
+                apiAdatok.Children.Add(DataToTextBlock((string)jsonData["region_name"], 20));
+                imageNetKep.Source = KepFromUrl("https://taszi.hu/kepek/kepkezelo/large/2828.jpg");
+            }
+            catch(Newtonsoft.Json.JsonReaderException ex)
+            {
+                MessageBox.Show("Üres az IP cím!","Hiba",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+           
+         
+            
+            
+            //https://taszi.hu/kepek/kepkezelo/large/2828.jpg
         }
     }
 }
