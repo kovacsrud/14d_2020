@@ -18,6 +18,7 @@
         <WrapPanel Grid.ColumnSpan="2">
             <TextBox x:Name="textBoxIp" Width="300" FontSize="30" />
             <Button x:Name="buttonIp" Content="Lekérdezés" FontSize="20" Click="buttonIp_Click" />
+            <Button x:Name="buttonKepletolt" Content="Kép letöltés" FontSize="20" Click="buttonKepletolt_Click" />
         </WrapPanel>
         <StackPanel x:Name="apiAdatok" Grid.Row="1" Grid.Column="0" />
         <Image x:Name="imageNetKep" Grid.Row="1" Grid.Column="1" />

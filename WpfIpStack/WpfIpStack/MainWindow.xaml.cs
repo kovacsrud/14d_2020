@@ -92,7 +92,7 @@ namespace WpfIpStack
                 apiAdatok.Children.Add(DataToTextBlock($"{DateTimeOffset.FromUnixTimeSeconds((long)jsonWeather["sys"]["sunrise"]).DateTime}", 20));
                 apiAdatok.Children.Add(DataToTextBlock($"{DateTimeOffset.FromUnixTimeSeconds((long)jsonWeather["sys"]["sunset"]).DateTime}", 20));
 
-                imageNetKep.Source = KepFromUrl("https://taszi.hu/kepek/kepkezelo/large/2828.jpg");
+                //imageNetKep.Source = KepFromUrl("https://taszi.hu/kepek/kepkezelo/large/2828.jpg");
                 
                 Debug.WriteLine(jsonWeather);
             }
@@ -109,6 +109,12 @@ namespace WpfIpStack
             
             
             //https://taszi.hu/kepek/kepkezelo/large/2828.jpg
+        }
+
+        private void buttonKepletolt_Click(object sender, RoutedEventArgs e)
+        {
+            PicWindow picwindow = new PicWindow(KepFromUrl("https://taszi.hu/kepek/kepkezelo/large/2828.jpg"));
+            picwindow.Show();
         }
     }
 }
