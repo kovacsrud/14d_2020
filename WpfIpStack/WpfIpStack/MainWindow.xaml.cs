@@ -27,6 +27,8 @@ namespace WpfIpStack
         JObject jsonData;
 
         String apiKey = "57e7f2daa88da7119dc6c575f1232c0f";
+        String weatherApiKey = "cee47ae14c4e2b23dd70220929479c28";
+
         public MainWindow()
         {
             InitializeComponent();
