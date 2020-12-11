@@ -60,6 +60,21 @@ namespace Kutyak
                 Console.WriteLine($"{i.Key},{i.Count()} db");
             }
 
+            var maxterheles = teljes.ToLookup(x=>x.UtolsoEll).OrderByDescending(x=>x.Count());
+
+            Console.WriteLine($"{maxterheles.First().Key},{maxterheles.First().Count()}");
+
+
+            var nevstat = teljes.ToLookup(x=>x.Kutyanev).OrderByDescending(x=>x.Count());
+
+            foreach (var i in nevstat)
+            {
+                Console.WriteLine($"{i.Key};{i.Count()}");
+            }
+            
+
+            
+
             Console.ReadKey();
         }
     }
