@@ -46,7 +46,19 @@ namespace Kutyak
             //    Console.WriteLine($"{i.Id},{i.Eletkor},{i.Kutyanev},{i.Kutyafajta}");
             //}
 
+            var legidosebb = teljes.Where(x=>x.Eletkor==teljes.Max(y=>y.Eletkor));
 
+            Console.WriteLine($"A legidősebb kutya:{legidosebb.ElementAt(0).Kutyanev},{legidosebb.ElementAt(0).Kutyafajta}");
+            Console.WriteLine($"A legidősebb kutya:{legidosebb.First().Kutyanev},{legidosebb.First().Kutyafajta}");
+
+            var januar = teljes.Where(x=>x.UtolsoEll=="2018.01.10");
+
+            var fajtankent = januar.ToLookup(x=>x.Kutyafajta);
+
+            foreach (var i in fajtankent)
+            {
+                Console.WriteLine($"{i.Key},{i.Count()} db");
+            }
 
             Console.ReadKey();
         }
