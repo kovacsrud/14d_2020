@@ -14,7 +14,7 @@ namespace Kutyak
             Kutyafajtak kutyafajtak = new Kutyafajtak("kutyafajtak.csv");
             Kutyanevek kutyanevek = new Kutyanevek("kutyanevek.csv");
 
-
+            Console.WriteLine($"{kutyak.Kutyaadatok.Count}");
 
 
             Console.ReadKey();

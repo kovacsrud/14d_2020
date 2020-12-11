@@ -17,7 +17,7 @@ namespace Kutyak
 
         }
         private List<Kutyanev> kutyanevadatok;
-        public List<Kutyanev> Kutyanevadatok { get; }
+        public List<Kutyanev> Kutyanevadatok { get { return kutyanevadatok; } }
 
         public Kutyanevek(string fajl)
         {

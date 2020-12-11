@@ -19,7 +19,7 @@ namespace Kutyak
 
         }
         private List<Kutya> kutyaadatok;
-        public List<Kutya> Kutyaadatok { get; }
+        public List<Kutya> Kutyaadatok { get { return kutyaadatok; } }
 
         public Kutyak(string fajl)
         {

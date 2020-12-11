@@ -18,7 +18,7 @@ namespace Kutyak
 
         }
         private List<Kutyafajta> kutyafajtaadatok;
-        public List<Kutyafajta> Kutyafajtaadatok { get; }
+        public List<Kutyafajta> Kutyafajtaadatok { get { return kutyafajtaadatok; } }
 
         public Kutyafajtak(string fajl)
         {
