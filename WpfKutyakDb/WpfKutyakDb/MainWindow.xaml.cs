@@ -23,7 +23,8 @@ namespace WpfKutyakDb
         public MainWindow()
         {
             InitializeComponent();
-            KutyafajtakSQL kutyafajtak = new KutyafajtakSQL("Data source=kutyad14d.db;version=3");
+            KutyafajtakSQL kutyafajtak = new KutyafajtakSQL("Data source=kutyak14d.db;version=3");
+            datagridKutyafajtak.ItemsSource = kutyafajtak.Kutyafajtak;
 
         }
     }

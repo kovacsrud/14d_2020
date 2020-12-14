@@ -35,7 +35,7 @@ namespace WpfKutyakDb
                 conn.Open();
                 using (SQLiteCommand comm = new SQLiteCommand(conn))
                 {
-                    comm.CommandText = "select * from kutyanevek";
+                    comm.CommandText = "select * from kutyafajtak";
 
                     using (SQLiteDataReader reader = comm.ExecuteReader())
                     {
