@@ -44,10 +44,16 @@ namespace WpfKutyakDb
 
         private void GridDblClick(object sender,RoutedEventArgs e)
         {
-            DataRowView row = (DataRowView)sender;
+            DataRowView row = (DataRowView)datagridKutyafajtak.SelectedItem;
             Debug.WriteLine(row["id"]);
             Debug.WriteLine(row["nev"]);
             Debug.WriteLine(row["eredetinev"]);
+            ModKutyafajta modkutyafajta = new ModKutyafajta(this,
+                Convert.ToInt32(row["id"]),
+                row["nev"].ToString(),
+                row["eredetinev"].ToString());
+            modkutyafajta.ShowDialog();
+
         }
        
     }

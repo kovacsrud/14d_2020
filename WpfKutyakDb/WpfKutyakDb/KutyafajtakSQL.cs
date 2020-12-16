@@ -128,6 +128,7 @@ namespace WpfKutyakDb
 
                     var modositottsor = comm.ExecuteNonQuery();
                     Debug.WriteLine(modositottsor);
+                    LekerdezesDT();
                 }
             }
         }
