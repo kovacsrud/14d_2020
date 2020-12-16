@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -18,13 +19,17 @@ namespace WpfKutyakDb
 
         }
 
+        public DataTable kutyafajtakDT;
+
         private List<Kutyafajta> kutyafajtak;
         public List<Kutyafajta> Kutyafajtak { get { return kutyafajtak; }  }
 
         public KutyafajtakSQL(string connString)
         {
             kutyafajtak = new List<Kutyafajta>();
+            kutyafajtakDT = new DataTable();
             Lekerdezes(connString);
+            LekerdezesDT(connString);
 
         }
 
@@ -63,5 +68,25 @@ namespace WpfKutyakDb
                 }
             }
         }
+
+        private void LekerdezesDT(string connString)
+        {
+            using (SQLiteConnection conn=new SQLiteConnection(connString))
+            {
+                conn.Open();
+                using (SQLiteCommand comm=new SQLiteCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandText = "select * from kutyafajtak";
+                    using (SQLiteDataReader reader=comm.ExecuteReader())
+                    {
+                        kutyafajtakDT.Load(reader);
+                    }
+
+                }
+            }
+        }
+
+
     }
 }
