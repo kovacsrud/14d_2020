@@ -87,6 +87,18 @@ namespace WpfKutyakDb
             }
         }
 
+        public void UjKutyafajta(string connString)
+        {
+            using (SQLiteConnection conn=new SQLiteConnection(connString))
+            {
+                conn.Open();
+                using (SQLiteCommand comm=new SQLiteCommand(conn))
+                {
+                    comm.CommandText = "";
+                }
+            }
+        }
+
 
     }
 }
