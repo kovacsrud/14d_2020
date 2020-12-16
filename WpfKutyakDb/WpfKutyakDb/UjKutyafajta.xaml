@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="UjKutyafajta" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <TextBlock Text="Kutyafajta neve" FontSize="30" />
+            <TextBox x:Name="textboxNev" FontSize="26" />
+            <TextBlock Text="Kutyafajta eredeti neve" FontSize="30" />
+            <TextBox x:Name="textboxEredetinev" FontSize="26" />
+            <Button x:Name="buttonInsertUjfajta" Content="Adat felvitele" Margin="20" Width="200" FontSize="26" />
+        </StackPanel>
     </Grid>
 </Window>
