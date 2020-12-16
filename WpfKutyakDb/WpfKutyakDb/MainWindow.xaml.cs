@@ -20,11 +20,12 @@ namespace WpfKutyakDb
     /// </summary>
     public partial class MainWindow : Window
     {
+        public KutyafajtakSQL kutyafajtak;
         public MainWindow()
         {
             //CRUD->Create,Read,Update,Delete
             InitializeComponent();
-            KutyafajtakSQL kutyafajtak = new KutyafajtakSQL("Data source=kutyak14d.db;version=3");
+            kutyafajtak = new KutyafajtakSQL("Data source=kutyak14d.db;version=3");
             //datagridKutyafajtak.ItemsSource = kutyafajtak.Kutyafajtak;
             datagridKutyafajtak.ItemsSource = kutyafajtak.kutyafajtakDT.DefaultView;
             
@@ -33,7 +34,7 @@ namespace WpfKutyakDb
 
         private void buttonUjKutyafajta_Click(object sender, RoutedEventArgs e)
         {
-            UjKutyafajta ujkutyafajta = new UjKutyafajta();
+            UjKutyafajta ujkutyafajta = new UjKutyafajta(this);
             ujkutyafajta.ShowDialog();
         }
     }

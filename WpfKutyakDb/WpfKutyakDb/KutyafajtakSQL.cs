@@ -108,6 +108,7 @@ namespace WpfKutyakDb
 
                     var beszurtsor=comm.ExecuteNonQuery();
                     Debug.WriteLine(beszurtsor);
+                    LekerdezesDT();
 
                 }
             }
