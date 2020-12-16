@@ -32,7 +32,7 @@ namespace WpfKutyakDb
             this.connString = connString;
             kutyafajtak = new List<Kutyafajta>();
             kutyafajtakDT = new DataTable();
-            ModositKutyafajta(423);
+            //ModositKutyafajta(423);
             //TorolKutyafajta(422);
             Lekerdezes();
             LekerdezesDT();
@@ -114,7 +114,7 @@ namespace WpfKutyakDb
             }
         }
 
-        public void ModositKutyafajta(int id)
+        public void ModositKutyafajta(int id,string nev,string eredetinev)
         {
             using (SQLiteConnection conn=new SQLiteConnection(connString))
             {
@@ -122,8 +122,8 @@ namespace WpfKutyakDb
                 using (SQLiteCommand comm=new SQLiteCommand(conn))
                 {
                     comm.CommandText = "UPDATE kutyafajtak SET nev=@nev,eredetinev=@eredetinev WHERE id=@id";
-                    comm.Parameters.Add("@nev", DbType.String).Value = "Kuvasz";
-                    comm.Parameters.Add("@eredetinev", DbType.String).Value = "Kuvasz";
+                    comm.Parameters.Add("@nev", DbType.String).Value = nev;
+                    comm.Parameters.Add("@eredetinev", DbType.String).Value = eredetinev;
                     comm.Parameters.Add("@id", DbType.Int32).Value = id;
 
                     var modositottsor = comm.ExecuteNonQuery();

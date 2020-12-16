@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +29,9 @@ namespace WpfKutyakDb
             InitializeComponent();
             kutyafajtak = new KutyafajtakSQL("Data source=kutyak14d.db;version=3");
             //datagridKutyafajtak.ItemsSource = kutyafajtak.Kutyafajtak;
+            datagridKutyafajtak.MouseDoubleClick += GridDblClick;
             datagridKutyafajtak.ItemsSource = kutyafajtak.kutyafajtakDT.DefaultView;
+           
             
             
         }
@@ -37,5 +41,14 @@ namespace WpfKutyakDb
             UjKutyafajta ujkutyafajta = new UjKutyafajta(this);
             ujkutyafajta.ShowDialog();
         }
+
+        private void GridDblClick(object sender,RoutedEventArgs e)
+        {
+            DataRowView row = (DataRowView)sender;
+            Debug.WriteLine(row["id"]);
+            Debug.WriteLine(row["nev"]);
+            Debug.WriteLine(row["eredetinev"]);
+        }
+       
     }
 }
