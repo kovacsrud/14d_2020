@@ -32,9 +32,12 @@ namespace WpfKutyakDb
             this.connString = connString;
             kutyafajtak = new List<Kutyafajta>();
             kutyafajtakDT = new DataTable();
+            ModositKutyafajta(423);
+            TorolKutyafajta(422);
             Lekerdezes();
             LekerdezesDT();
-            UjKutyafajta();
+            //UjKutyafajta();
+            
 
         }
 
@@ -110,9 +113,37 @@ namespace WpfKutyakDb
             }
         }
 
-        public void ModositKutyafajta()
+        public void ModositKutyafajta(int id)
         {
+            using (SQLiteConnection conn=new SQLiteConnection(connString))
+            {
+                conn.Open();
+                using (SQLiteCommand comm=new SQLiteCommand(conn))
+                {
+                    comm.CommandText = "UPDATE kutyafajtak SET nev=@nev,eredetinev=@eredetinev WHERE id=@id";
+                    comm.Parameters.Add("@nev", DbType.String).Value = "Kuvasz";
+                    comm.Parameters.Add("@eredetinev", DbType.String).Value = "Kuvasz";
+                    comm.Parameters.Add("@id", DbType.Int32).Value = id;
 
+                    var modositottsor = comm.ExecuteNonQuery();
+                    Debug.WriteLine(modositottsor);
+                }
+            }
+        }
+
+        public void TorolKutyafajta(int id)
+        {
+            using (SQLiteConnection conn=new SQLiteConnection(connString))
+            {
+                conn.Open();
+                using (SQLiteCommand comm=new SQLiteCommand(conn))
+                {
+                    comm.CommandText = "DELETE FROM kutyafajtak WHERE id=@id";
+                    comm.Parameters.Add("@id", DbType.Int32).Value = id;
+                    var toroltsor = comm.ExecuteNonQuery();
+                    Debug.WriteLine(toroltsor);
+                }
+            }
         }
 
 
