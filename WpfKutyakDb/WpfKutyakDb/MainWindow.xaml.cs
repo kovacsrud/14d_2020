@@ -34,7 +34,7 @@ namespace WpfKutyakDb
         private void buttonUjKutyafajta_Click(object sender, RoutedEventArgs e)
         {
             UjKutyafajta ujkutyafajta = new UjKutyafajta();
-            ujkutyafajta.Show();
+            ujkutyafajta.ShowDialog();
         }
     }
 }

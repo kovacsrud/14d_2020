@@ -12,7 +12,7 @@
             <TextBox x:Name="textboxNev" FontSize="26" />
             <TextBlock Text="Kutyafajta eredeti neve" FontSize="30" />
             <TextBox x:Name="textboxEredetinev" FontSize="26" />
-            <Button x:Name="buttonInsertUjfajta" Content="Adat felvitele" Margin="20" Width="200" FontSize="26" />
+            <Button x:Name="buttonInsertUjfajta" Content="Adat felvitele" Margin="20" Width="200" FontSize="26" Click="buttonInsertUjfajta_Click" />
         </StackPanel>
     </Grid>
 </Window>

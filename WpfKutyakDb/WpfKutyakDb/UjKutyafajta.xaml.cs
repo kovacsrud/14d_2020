@@ -23,5 +23,10 @@ namespace WpfKutyakDb
         {
             InitializeComponent();
         }
+
+        private void buttonInsertUjfajta_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }
