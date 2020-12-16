@@ -94,7 +94,7 @@ namespace WpfKutyakDb
                 conn.Open();
                 using (SQLiteCommand comm=new SQLiteCommand(conn))
                 {
-                    comm.CommandText = "";
+                    comm.CommandText = "INSERT INTO kutyafajtak (nev,eredetinev)";
                 }
             }
         }
