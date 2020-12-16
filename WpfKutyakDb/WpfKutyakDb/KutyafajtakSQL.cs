@@ -22,20 +22,23 @@ namespace WpfKutyakDb
 
         public DataTable kutyafajtakDT;
 
+        private string connString = "";
+
         private List<Kutyafajta> kutyafajtak;
         public List<Kutyafajta> Kutyafajtak { get { return kutyafajtak; }  }
 
         public KutyafajtakSQL(string connString)
         {
+            this.connString = connString;
             kutyafajtak = new List<Kutyafajta>();
             kutyafajtakDT = new DataTable();
-            Lekerdezes(connString);
-            LekerdezesDT(connString);
-            UjKutyafajta(connString);
+            Lekerdezes();
+            LekerdezesDT();
+            UjKutyafajta();
 
         }
 
-        private void Lekerdezes(string connString)
+        private void Lekerdezes()
         {
             using (SQLiteConnection conn = new SQLiteConnection(connString))
             {
@@ -71,7 +74,7 @@ namespace WpfKutyakDb
             }
         }
 
-        private void LekerdezesDT(string connString)
+        private void LekerdezesDT()
         {
             using (SQLiteConnection conn=new SQLiteConnection(connString))
             {
@@ -89,7 +92,7 @@ namespace WpfKutyakDb
             }
         }
 
-        public void UjKutyafajta(string connString)
+        public void UjKutyafajta()
         {
             using (SQLiteConnection conn=new SQLiteConnection(connString))
             {
@@ -105,6 +108,11 @@ namespace WpfKutyakDb
 
                 }
             }
+        }
+
+        public void ModositKutyafajta()
+        {
+
         }
 
 
