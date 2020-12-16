@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfKutyakDb
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UjKutyafajta.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UjKutyafajta : Window
     {
-        public MainWindow()
+        public UjKutyafajta()
         {
-            //CRUD->Create,Read,Update,Delete
             InitializeComponent();
-            KutyafajtakSQL kutyafajtak = new KutyafajtakSQL("Data source=kutyak14d.db;version=3");
-            //datagridKutyafajtak.ItemsSource = kutyafajtak.Kutyafajtak;
-            datagridKutyafajtak.ItemsSource = kutyafajtak.kutyafajtakDT.DefaultView;
-            
-            
         }
     }
 }

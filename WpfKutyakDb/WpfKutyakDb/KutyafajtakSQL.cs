@@ -33,7 +33,7 @@ namespace WpfKutyakDb
             kutyafajtak = new List<Kutyafajta>();
             kutyafajtakDT = new DataTable();
             ModositKutyafajta(423);
-            TorolKutyafajta(422);
+            //TorolKutyafajta(422);
             Lekerdezes();
             LekerdezesDT();
             //UjKutyafajta();
@@ -95,7 +95,7 @@ namespace WpfKutyakDb
             }
         }
 
-        public void UjKutyafajta()
+        public void UjKutyafajta(string nev,string eredetinev)
         {
             using (SQLiteConnection conn=new SQLiteConnection(connString))
             {
@@ -103,8 +103,8 @@ namespace WpfKutyakDb
                 using (SQLiteCommand comm=new SQLiteCommand(conn))
                 {
                     comm.CommandText = $"INSERT INTO kutyafajtak (nev,eredetinev) values(@nev,@eredetinev)";
-                    comm.Parameters.Add("@nev", DbType.String).Value = "Komondor";
-                    comm.Parameters.Add("@eredetinev", DbType.String).Value = "Komondor";
+                    comm.Parameters.Add("@nev", DbType.String).Value = nev;
+                    comm.Parameters.Add("@eredetinev", DbType.String).Value = eredetinev;
 
                     var beszurtsor=comm.ExecuteNonQuery();
                     Debug.WriteLine(beszurtsor);
