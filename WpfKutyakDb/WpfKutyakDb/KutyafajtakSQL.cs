@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace WpfKutyakDb
             kutyafajtakDT = new DataTable();
             Lekerdezes(connString);
             LekerdezesDT(connString);
+            UjKutyafajta(connString);
 
         }
 
@@ -94,7 +96,13 @@ namespace WpfKutyakDb
                 conn.Open();
                 using (SQLiteCommand comm=new SQLiteCommand(conn))
                 {
-                    comm.CommandText = "INSERT INTO kutyafajtak (nev,eredetinev)";
+                    comm.CommandText = $"INSERT INTO kutyafajtak (nev,eredetinev) values(@nev,@eredetinev)";
+                    comm.Parameters.Add("@nev", DbType.String).Value = "Komondor";
+                    comm.Parameters.Add("@eredetinev", DbType.String).Value = "Komondor";
+
+                    var beszurtsor=comm.ExecuteNonQuery();
+                    Debug.WriteLine(beszurtsor);
+
                 }
             }
         }
