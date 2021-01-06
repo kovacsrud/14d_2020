@@ -20,9 +20,18 @@ namespace WpfKutyaAdapter
     /// </summary>
     public partial class MainWindow : Window
     {
+        KutyaAdapter kutyaadapter;
         public MainWindow()
         {
             InitializeComponent();
+            kutyaadapter = new KutyaAdapter("Data Source=kutyak14d.db;Version=3");
+            dataGridKutyanevek.ItemsSource = kutyaadapter.nevadapter.Nevadatok;
+
+        }
+
+        private void buttonUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            kutyaadapter.nevadapter.UpdateKutyanevek();
         }
     }
 }

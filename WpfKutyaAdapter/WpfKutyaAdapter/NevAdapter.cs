@@ -23,9 +23,28 @@ namespace WpfKutyaAdapter
             conn = new SQLiteConnection(connString);
             adapter = new SQLiteDataAdapter("",conn);
 
+            adapter.SelectCommand = new SQLiteCommand(conn);
             adapter.SelectCommand.CommandText = "select * from kutyanevek";
+            adapter.InsertCommand = new SQLiteCommand(conn);
+            adapter.InsertCommand.CommandText = "insert into kutyanevek (kutyanev)" +
+                " values (@kutyanev)";
+            adapter.InsertCommand.Parameters.Add("@kutyanev",DbType.String,0,"kutyanev");
+            adapter.UpdateCommand = new SQLiteCommand(conn);
+            adapter.UpdateCommand.CommandText = "update kutyanevek set kutyanev=@kutyanev where id=@id";
+            adapter.UpdateCommand.Parameters.Add("@kutyanev", DbType.String, 0, "kutyanev");
+            adapter.UpdateCommand.Parameters.Add("@id", DbType.Int32, 0, "id").SourceVersion = DataRowVersion.Original;
+            adapter.DeleteCommand = new SQLiteCommand(conn);
+            adapter.DeleteCommand.CommandText = "delete from kutyanevek where id=@id";
+            adapter.DeleteCommand.Parameters.Add("@id",DbType.Int32,0,"id").SourceVersion=DataRowVersion.Original;
+
+            adapter.Fill(nevadatok);
+
         }
 
-
+        public void UpdateKutyanevek()
+        {
+            adapter.Update(nevadatok);
+            
+        }
     }
 }
