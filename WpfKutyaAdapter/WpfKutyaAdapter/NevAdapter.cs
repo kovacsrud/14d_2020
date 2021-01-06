@@ -14,12 +14,18 @@ namespace WpfKutyaAdapter
         DataTable nevadatok;
         public DataView Nevadatok { get { return nevadatok.DefaultView; } }
         SQLiteDataAdapter adapter;
+        SQLiteConnection conn;
 
         public NevAdapter(string connstring)
         {
             connString = connstring;
             nevadatok = new DataTable();
-            adapter = new SQLiteDataAdapter();
+            conn = new SQLiteConnection(connString);
+            adapter = new SQLiteDataAdapter("",conn);
+
+            adapter.SelectCommand.CommandText = "select * from kutyanevek";
         }
+
+
     }
 }
