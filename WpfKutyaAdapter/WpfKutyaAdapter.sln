@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfKutyaAdapter", "WpfKutyaAdapter\WpfKutyaAdapter.csproj", "{A903D44F-516E-401F-A969-5700AC7A167B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A903D44F-516E-401F-A969-5700AC7A167B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A903D44F-516E-401F-A969-5700AC7A167B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A903D44F-516E-401F-A969-5700AC7A167B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A903D44F-516E-401F-A969-5700AC7A167B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23A83671-30C9-47D0-906B-CDA31E83CE5A}
+	EndGlobalSection
+EndGlobal
