@@ -77,6 +77,9 @@
     <Compile Include="ModKutyafajta.xaml.cs">
       <DependentUpon>ModKutyafajta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TorolKutyafajta.xaml.cs">
+      <DependentUpon>TorolKutyafajta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UjKutyafajta.xaml.cs">
       <DependentUpon>UjKutyafajta.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModKutyafajta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TorolKutyafajta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

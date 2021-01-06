@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfKutyakDb.TorolKutyafajta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfKutyakDb"
+        mc:Ignorable="d"
+        Title="TorolKutyafajta" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Kutyafajta neve" FontSize="30" />
+            <TextBlock x:Name="textblockNev" FontSize="26" />
+            <TextBlock Text="Kutyafajta eredeti neve" FontSize="30" />
+            <TextBlock x:Name="textblockEredetinev" FontSize="26" />
+            <Button x:Name="buttonDeletefajta" Content="Adat törlése" Margin="20" Width="200" FontSize="26" Click="buttonDeletefajta_Click"   />
+
+        </StackPanel>
+    </Grid>
+</Window>
