@@ -144,8 +144,12 @@ namespace WpfKutyakDb
                     comm.Parameters.Add("@id", DbType.Int32).Value = id;
                     var toroltsor = comm.ExecuteNonQuery();
                     Debug.WriteLine(toroltsor);
+                    var torlendo = kutyafajtakDT.Select($"id = {id}");
+                    kutyafajtakDT.Rows.Remove(torlendo[0]);
+                    
                 }
             }
+            LekerdezesDT();
         }
 
 

@@ -30,6 +30,7 @@ namespace WpfKutyakDb
             kutyafajtak = new KutyafajtakSQL("Data source=kutyak14d.db;version=3");
             //datagridKutyafajtak.ItemsSource = kutyafajtak.Kutyafajtak;
             datagridKutyafajtak.MouseDoubleClick += GridDblClick;
+            datagridKutyafajtak.MouseRightButtonDown += GridRightClick;
             datagridKutyafajtak.ItemsSource = kutyafajtak.kutyafajtakDT.DefaultView;
            
             
@@ -54,6 +55,20 @@ namespace WpfKutyakDb
                 row["eredetinev"].ToString());
             modkutyafajta.ShowDialog();
 
+        }
+
+        private void GridRightClick(object sender,RoutedEventArgs e)
+        {
+            DataRowView row = (DataRowView)datagridKutyafajtak.SelectedItem;
+            Debug.WriteLine(row["id"]);
+            Debug.WriteLine(row["nev"]);
+            Debug.WriteLine(row["eredetinev"]);
+
+            TorolKutyafajta torolkutyafajta = new TorolKutyafajta(this,
+               Convert.ToInt32(row["id"]),
+               row["nev"].ToString(),
+               row["eredetinev"].ToString());
+            torolkutyafajta.ShowDialog();
         }
        
     }
