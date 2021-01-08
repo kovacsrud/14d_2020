@@ -10,13 +10,14 @@ namespace WpfKutyaAdapter
     {
         string connString;
         public NevAdapter nevadapter;
-        FajtaAdapter fajtaadapter;
+        public FajtaAdapter fajtaadapter;
         KezelesAdapter kezelesadapter;
 
         public KutyaAdapter(string connstring)
         {
             connString = connstring;
             nevadapter = new NevAdapter(connString);
+            fajtaadapter = new FajtaAdapter(connString);
             
         }
     }
