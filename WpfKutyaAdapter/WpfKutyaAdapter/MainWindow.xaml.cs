@@ -28,7 +28,7 @@ namespace WpfKutyaAdapter
             DataContext = kutyaadapter;
 
             //dataGridKutyanevek.ItemsSource = kutyaadapter.nevadapter.Nevadatok;
-            dataGridKutyafajtak.ItemsSource = kutyaadapter.fajtaadapter.Fajtaadatok;
+            //dataGridKutyafajtak.ItemsSource = kutyaadapter.fajtaadapter.Fajtaadatok;
 
         }
 
