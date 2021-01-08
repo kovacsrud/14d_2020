@@ -44,7 +44,8 @@ namespace WpfKutyaAdapter
         public void UpdateKutyanevek()
         {
             adapter.Update(nevadatok);
-            
+            nevadatok.Clear();
+            adapter.Fill(nevadatok);
         }
     }
 }
