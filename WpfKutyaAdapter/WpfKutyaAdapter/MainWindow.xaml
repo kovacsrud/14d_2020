@@ -44,8 +44,22 @@
                 </Grid.RowDefinitions>
                 <DataGrid x:Name="dataGridKutyakezelesek" ItemsSource="{Binding kezelesadapter.Kezelesadatok}" ColumnWidth="*" AutoGenerateColumns="False" >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Fajta neve" Binding="{Binding fajtaid}"/>
-                        <DataGridTextColumn Header="Kutya neve" Binding="{Binding nevid}"/>
+                       <!-- <DataGridTextColumn Header="Fajta neve" Binding="{Binding fajtaid}"/>
+                        <DataGridTextColumn Header="Kutya neve" Binding="{Binding nevid}"/>-->
+                        <DataGridTemplateColumn Header="Fajta">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding DataContext.fajtaadapter.Fajtaadatok,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" DisplayMemberPath="nev" SelectedValuePath="id" SelectedValue="{Binding fajtaid}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Kutya neve">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding DataContext.nevadapter.Nevadatok,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" DisplayMemberPath="kutyanev" SelectedValuePath="id" SelectedValue="{Binding nevid}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn Header="Kutya életkora" Binding="{Binding eletkor}"/>
                         <DataGridTextColumn Header="Utolsó ellenőrzés" Binding="{Binding utolsoell}"/>
                     </DataGrid.Columns>
