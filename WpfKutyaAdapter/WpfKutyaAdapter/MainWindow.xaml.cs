@@ -41,5 +41,10 @@ namespace WpfKutyaAdapter
         {
             kutyaadapter.fajtaadapter.UpdateKutyafajtak();
         }
+
+        private void buttonUpdateKezelesek_Click(object sender, RoutedEventArgs e)
+        {
+            kutyaadapter.kezelesadapter.UpdateKutyak();
+        }
     }
 }
