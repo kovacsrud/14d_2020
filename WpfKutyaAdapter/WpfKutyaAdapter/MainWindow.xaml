@@ -48,6 +48,7 @@
                         <DataGridTextColumn Header="Kutya neve" Binding="{Binding nevid}"/>-->
                         <DataGridTemplateColumn Header="Fajta">
                             <DataGridTemplateColumn.CellTemplate>
+                               
                                 <DataTemplate>
                                     <ComboBox ItemsSource="{Binding DataContext.fajtaadapter.Fajtaadatok,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" DisplayMemberPath="nev" SelectedValuePath="id" SelectedValue="{Binding fajtaid}" />
                                 </DataTemplate>
