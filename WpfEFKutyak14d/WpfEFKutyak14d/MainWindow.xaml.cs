@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,13 @@ namespace WpfEFKutyak14d
     /// </summary>
     public partial class MainWindow : Window
     {
+        KutyaModel kutyamodel;
         public MainWindow()
         {
             InitializeComponent();
+            kutyamodel = new KutyaModel();
+            kutyamodel.kutya.Load();
+            datagridKutya.ItemsSource=kutyamodel.kutya.Local;
         }
     }
 }
