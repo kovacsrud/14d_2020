@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="datagridKutya" ColumnWidth="*" />
+        <DataGrid x:Name="datagridKutya" ItemsSource="{Binding kutya.Local}" AutoGenerateColumns="False" ColumnWidth="*" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Kor" Binding="{Binding kor}" />
+                <DataGridTextColumn Header="Utolsó kezelés" Binding="{Binding utolsokezeles}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
