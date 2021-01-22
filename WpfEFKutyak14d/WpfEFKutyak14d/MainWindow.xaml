@@ -13,7 +13,7 @@
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="datagridKutya" ItemsSource="{Binding kutya.Local}" AutoGenerateColumns="False" ColumnWidth="*" Grid.RowSpan="2" >
+                <DataGrid x:Name="datagridKutya" ItemsSource="{Binding kutya.Local}" AutoGenerateColumns="False" ColumnWidth="*" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Azonosító" Binding="{Binding Id}" />
                         <DataGridTextColumn Header="Kor" Binding="{Binding kor}" />
@@ -27,10 +27,37 @@
             </Grid>
         </TabItem>
         <TabItem Header="Kutyák nevei">
-
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="datagridKutyanev" ItemsSource="{Binding kutyanevek.Local}" AutoGenerateColumns="False" ColumnWidth="*" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Azonosító" Binding="{Binding Id}" />
+                        <DataGridTextColumn Header="Kutya neve" Binding="{Binding Kutyanev}" />
+                       
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="buttonNevUpdate" Content="Update" Grid.Row="1" />
+            </Grid>
         </TabItem>
         <TabItem Header="Kutyák fajtái">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="datagridKutyafajta" ItemsSource="{Binding kutyafajtak.Local}" AutoGenerateColumns="False" ColumnWidth="*" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Azonosító" Binding="{Binding Id}" />
+                        <DataGridTextColumn Header="Fajta neve" Binding="{Binding nev}" />
+                        <DataGridTextColumn Header="Fajta eredeti neve" Binding="{Binding eredetinev}" />
 
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="buttonFajtaUpdate" Content="Update" Grid.Row="1" />
+            </Grid>
         </TabItem>
     </TabControl>
 
