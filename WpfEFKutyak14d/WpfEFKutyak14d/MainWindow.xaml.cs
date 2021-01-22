@@ -32,5 +32,15 @@ namespace WpfEFKutyak14d
             DataContext = kutyamodel;
             //datagridKutya.ItemsSource=kutyamodel.kutya.Local;
         }
+
+        private void buttonFajtaUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            kutyamodel.SaveChanges();
+        }
+
+        private void buttonNevUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            kutyamodel.SaveChanges();
+        }
     }
 }

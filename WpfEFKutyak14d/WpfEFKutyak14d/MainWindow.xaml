@@ -39,7 +39,7 @@
                        
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="buttonNevUpdate" Content="Update" Grid.Row="1" />
+                <Button x:Name="buttonNevUpdate" Content="Update" Grid.Row="1" Click="buttonNevUpdate_Click" />
             </Grid>
         </TabItem>
         <TabItem Header="Kutyák fajtái">
@@ -56,7 +56,7 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="buttonFajtaUpdate" Content="Update" Grid.Row="1" />
+                <Button x:Name="buttonFajtaUpdate" Content="Update" Grid.Row="1" Click="buttonFajtaUpdate_Click" />
             </Grid>
         </TabItem>
     </TabControl>
