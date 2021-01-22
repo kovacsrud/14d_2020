@@ -6,12 +6,32 @@
         xmlns:local="clr-namespace:WpfEFKutyak14d"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="datagridKutya" ItemsSource="{Binding kutya.Local}" AutoGenerateColumns="False" ColumnWidth="*" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Kor" Binding="{Binding kor}" />
-                <DataGridTextColumn Header="Utolsó kezelés" Binding="{Binding utolsokezeles}" />
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+    <TabControl>
+        <TabItem Header="Kezelések adatai">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="datagridKutya" ItemsSource="{Binding kutya.Local}" AutoGenerateColumns="False" ColumnWidth="*" Grid.RowSpan="2" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Azonosító" Binding="{Binding Id}" />
+                        <DataGridTextColumn Header="Kor" Binding="{Binding kor}" />
+                        <DataGridTextColumn Header="Utolsó kezelés" Binding="{Binding utolsokezeles}" />
+                        <DataGridTextColumn Header="Név" Binding="{Binding kutyanevek.Kutyanev}" />
+                        <DataGridTextColumn Header="Fajta" Binding="{Binding kutyafajtak.nev}" />
+
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="buttonKezelesUpdate" Content="Update" Grid.Row="1" />
+            </Grid>
+        </TabItem>
+        <TabItem Header="Kutyák nevei">
+
+        </TabItem>
+        <TabItem Header="Kutyák fajtái">
+
+        </TabItem>
+    </TabControl>
+
 </Window>
