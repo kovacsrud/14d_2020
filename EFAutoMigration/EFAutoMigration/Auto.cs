@@ -19,5 +19,10 @@ namespace EFAutoMigration
         public string Tipus { get; set; }
         [Required]
         public int GyartasiEv { get; set; }
+
+        public int Alvazszam { get; set; }
+
+        public int TulajId { get; set; }
+        public Tulaj Tulaj { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace EFAutoMigration
     public class AutoContext:DbContext
     {
         public DbSet<Auto> autok { get; set; }
+        public DbSet<Tulaj> tulajok { get; set; }
 
     }
 }

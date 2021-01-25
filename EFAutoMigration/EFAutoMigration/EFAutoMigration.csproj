@@ -55,12 +55,23 @@
   <ItemGroup>
     <Compile Include="Auto.cs" />
     <Compile Include="AutoContext.cs" />
+    <Compile Include="Migrations\202101251302139_tulaj_telefon.cs" />
+    <Compile Include="Migrations\202101251302139_tulaj_telefon.designer.cs">
+      <DependentUpon>202101251302139_tulaj_telefon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tulaj.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101251302139_tulaj_telefon.resx">
+      <DependentUpon>202101251302139_tulaj_telefon.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

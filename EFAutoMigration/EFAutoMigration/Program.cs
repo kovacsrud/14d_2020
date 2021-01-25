@@ -11,21 +11,28 @@ namespace EFAutoMigration
         static void Main(string[] args)
         {
             var autoadatok = new AutoContext();
-            
-            
-            
+
+            List<Auto> autok = new List<Auto>();          
 
 
             Auto auto = new Auto
             {
-                Rendszam="AAA-111",
+                Rendszam="AAA-112",
                 Gyartmany="Opel",
                 Tipus="Corsa",
                 GyartasiEv=2006
                 
             };
 
-            autoadatok.autok.Add(auto);
+            autok.Add(auto);
+
+            Tulaj tulaj = new Tulaj
+            {
+                Autok=autok,
+                Nev="Kiss Ubul"
+            };
+
+            autoadatok.tulajok.Add(tulaj);
 
             autoadatok.SaveChanges();
 
