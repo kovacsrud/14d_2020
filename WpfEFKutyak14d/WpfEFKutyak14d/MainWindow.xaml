@@ -20,6 +20,13 @@
                         <DataGridTextColumn Header="Utolsó kezelés" Binding="{Binding utolsokezeles}" />
                         <DataGridTextColumn Header="Név" Binding="{Binding kutyanevek.Kutyanev}" />
                         <DataGridTextColumn Header="Fajta" Binding="{Binding kutyafajtak.nev}" />
+                        <DataGridTemplateColumn Header="Kutyák nevei">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox  ItemsSource="{Binding DataContext.kutyanevek.Local,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" DisplayMemberPath="Kutyanev" SelectedValuePath="Id" SelectedValue="{Binding nevid}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
                     </DataGrid.Columns>
                 </DataGrid>
