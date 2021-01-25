@@ -18,12 +18,20 @@
                         <DataGridTextColumn Header="Azonosító" Binding="{Binding Id}" />
                         <DataGridTextColumn Header="Kor" Binding="{Binding kor}" />
                         <DataGridTextColumn Header="Utolsó kezelés" Binding="{Binding utolsokezeles}" />
-                        <DataGridTextColumn Header="Név" Binding="{Binding kutyanevek.Kutyanev}" />
-                        <DataGridTextColumn Header="Fajta" Binding="{Binding kutyafajtak.nev}" />
-                        <DataGridTemplateColumn Header="Kutyák nevei">
+                        <!--<DataGridTextColumn Header="Név" Binding="{Binding kutyanevek.Kutyanev}" />
+                        <DataGridTextColumn Header="Fajta" Binding="{Binding kutyafajtak.nev}" />-->
+                        
+                        <DataGridTemplateColumn Header="Név">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <ComboBox  ItemsSource="{Binding DataContext.kutyanevek.Local,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" DisplayMemberPath="Kutyanev" SelectedValuePath="Id" SelectedValue="{Binding nevid}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Fajta">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox  ItemsSource="{Binding DataContext.kutyafajtak.Local,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=DataGrid}}" DisplayMemberPath="nev" SelectedValuePath="Id" SelectedValue="{Binding fajtaid}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
