@@ -35,12 +35,32 @@ namespace WpfEFKutyak14d
 
         private void buttonFajtaUpdate_Click(object sender, RoutedEventArgs e)
         {
-            kutyamodel.SaveChanges();
+            DbUpdate();
         }
+
 
         private void buttonNevUpdate_Click(object sender, RoutedEventArgs e)
         {
-            kutyamodel.SaveChanges();
+            DbUpdate();
         }
+
+        private void buttonKezelesUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            DbUpdate();
+        }
+        private void DbUpdate()
+        {
+            var muvelet = kutyamodel.SaveChanges();
+            if (muvelet > 0)
+            {
+                MessageBox.Show("Sikeres update!");
+            }
+            else
+            {
+                MessageBox.Show("Nem történt változás!");
+            }
+        }
+
+       
     }
 }

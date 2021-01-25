@@ -23,7 +23,7 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="buttonKezelesUpdate" Content="Update" Grid.Row="1" />
+                <Button x:Name="buttonKezelesUpdate" Content="Update" Grid.Row="1" Click="buttonKezelesUpdate_Click" />
             </Grid>
         </TabItem>
         <TabItem Header="Kutyák nevei">
