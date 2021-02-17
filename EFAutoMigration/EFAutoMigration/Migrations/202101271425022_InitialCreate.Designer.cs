@@ -7,13 +7,13 @@ namespace EFAutoMigration.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class tulaj_telefon : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(tulaj_telefon));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101251302139_tulaj_telefon"; }
+            get { return "202101271425022_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

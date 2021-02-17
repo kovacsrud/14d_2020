@@ -55,9 +55,13 @@
   <ItemGroup>
     <Compile Include="Auto.cs" />
     <Compile Include="AutoContext.cs" />
-    <Compile Include="Migrations\202101251302139_tulaj_telefon.cs" />
-    <Compile Include="Migrations\202101251302139_tulaj_telefon.designer.cs">
-      <DependentUpon>202101251302139_tulaj_telefon.cs</DependentUpon>
+    <Compile Include="Migrations\202101271425022_InitialCreate.cs" />
+    <Compile Include="Migrations\202101271425022_InitialCreate.designer.cs">
+      <DependentUpon>202101271425022_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101271427161_tulaj.cs" />
+    <Compile Include="Migrations\202101271427161_tulaj.designer.cs">
+      <DependentUpon>202101271427161_tulaj.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -69,8 +73,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101251302139_tulaj_telefon.resx">
-      <DependentUpon>202101251302139_tulaj_telefon.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101271425022_InitialCreate.resx">
+      <DependentUpon>202101271425022_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101271427161_tulaj.resx">
+      <DependentUpon>202101271427161_tulaj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
