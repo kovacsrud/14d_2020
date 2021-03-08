@@ -52,7 +52,29 @@ namespace NUnitAlapmuveletTest
 
         }
 
-       
+        [Test,TestCaseSource("GetOsztasTesztEsetek")]
+        public void TestOsztas(double a,double b,double elvart)
+        {
+            Alapmuvelet alapmuvelet = new Alapmuvelet();
+            var sut = alapmuvelet.Osztas(a, b);
+            Assert.AreEqual(elvart, sut,0.000005);
+        }
+
+        private static IEnumerable<double[]> GetOsztasTesztEsetek()
+        {
+            var sorok = File.ReadAllLines("osztas_tesztesetek.csv");
+
+            for (int i = 0; i < sorok.Length; i++)
+            {
+                var e = sorok[i].Split(';');
+                double a = Convert.ToDouble(e[0]);
+                double b = Convert.ToDouble(e[1]);
+                double elvart = Convert.ToDouble(e[2]);
+                yield return new[] { a, b, elvart };
+
+            }
+
+        }
 
     }
 }
