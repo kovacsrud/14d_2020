@@ -1,5 +1,9 @@
 using NUnit.Framework;
 using Alapmuveletek;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System;
 
 namespace NUnitAlapmuveletTest
 {
@@ -22,9 +26,11 @@ namespace NUnitAlapmuveletTest
             var sut = alapmuvelet.Osszeadas(a, b);
             Assert.AreEqual(elvart, sut,0.2);
         }
+         
 
+        
 
-
+       
 
     }
 }
