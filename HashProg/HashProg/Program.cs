@@ -41,7 +41,7 @@ namespace HashProg
                 hashfajlmd5.Append(hash[i].ToString("x2"));
             }
             //3c10c2eabdbda72710357ba04f8a2941
-            Console.WriteLine(hashfajlmd5);
+            Console.WriteLine(hashfajlmd5.ToString());
 
             Console.ReadKey();
         }
