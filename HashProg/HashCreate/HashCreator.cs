@@ -20,7 +20,7 @@ namespace HashCreate
     {
         //választás az algoritmusok között
         //választás a string és a fájl között
-        public string CreateHash(HashType t,string szoveg)
+        public string CreateHash(HashType t,string szoveg,bool up=false)
         {
             string hash = "";
 
@@ -110,8 +110,16 @@ namespace HashCreate
 
                 hash = ByteToHash(hasher.ComputeHash(data));
             }
+
+            if (up)
+            {
+                return hash.ToUpper();
+            }
+            else
+            {
+                return hash;
+            }
             
-            return hash;
         }
 
         private string ByteToHash(byte[] data)
@@ -123,6 +131,8 @@ namespace HashCreate
                 hashString.Append(data[i].ToString("x2"));
             }
 
+
+            
             return hashString.ToString();
         }
     }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.IO;
+using HashCreate;
 
 namespace HashProg
 {
@@ -42,6 +43,12 @@ namespace HashProg
             }
             //3c10c2eabdbda72710357ba04f8a2941
             Console.WriteLine(hashfajlmd5.ToString());
+
+
+            HashCreator hashcmd5 = new HashCreator();
+
+            Console.WriteLine(hashcmd5.CreateHash(HashType.MD5,"Valami szöveg"));
+            Console.WriteLine(hashcmd5.CreateHash(HashType.MD5, @"d:\toyota.jpg"));
 
             Console.ReadKey();
         }
