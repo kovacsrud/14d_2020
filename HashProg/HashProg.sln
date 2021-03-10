@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashProg", "HashProg\HashPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCreate", "HashCreate\HashCreate.csproj", "{F2463201-83B9-4D60-B05B-C20F5E14AEC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashCreatorTest", "HashCreatorTest\HashCreatorTest.csproj", "{4E975B64-0C06-45EB-8F76-EA1E4A0AB22C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F2463201-83B9-4D60-B05B-C20F5E14AEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2463201-83B9-4D60-B05B-C20F5E14AEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2463201-83B9-4D60-B05B-C20F5E14AEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E975B64-0C06-45EB-8F76-EA1E4A0AB22C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E975B64-0C06-45EB-8F76-EA1E4A0AB22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E975B64-0C06-45EB-8F76-EA1E4A0AB22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E975B64-0C06-45EB-8F76-EA1E4A0AB22C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
