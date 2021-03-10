@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel>
+            <RadioButton x:Name="selectmd5" Content="MD5" FontSize="18" IsChecked="True" />
+            <RadioButton x:Name="selectsha1" Content="SHA1" FontSize="18" />
+            <RadioButton x:Name="selectsha256" Content="SHA256" FontSize="18"/>
+            <RadioButton x:Name="selectsha384" Content="SHA384" FontSize="18"/>
+            <RadioButton x:Name="selectsha512" Content="SHA512" FontSize="18"/>
+
+        </WrapPanel>
+        <TextBox x:Name="szoveg" FontSize="20" Height="35" Width="500" Grid.Row="1" />
+        <TextBlock x:Name="hashszoveg" FontSize="20" Grid.Row="4" />
+        <Button x:Name="buttonHash" Content="Hash generálás" Width="100" Height="50" Grid.Row="5" Click="buttonHash_Click" />
     </Grid>
 </Window>
