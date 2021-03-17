@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HashCreate;
+using Microsoft.Win32;
 
 namespace WpfHash
 {
@@ -52,6 +53,17 @@ namespace WpfHash
             {
                 hashszoveg.Text = hash.CreateHash(HashType.SHA512, szoveg.Text);
             }
+        }
+
+        private void buttonFajlHash_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            if (dialog.ShowDialog()==true)
+            {
+                hashszoveg.Text = hash.CreateHash(HashType.MD5, dialog.FileName);
+            }
+
         }
     }
 }
