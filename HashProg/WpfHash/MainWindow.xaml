@@ -24,7 +24,8 @@
 
         </WrapPanel>
         <TextBox x:Name="szoveg" FontSize="20" Height="35" Width="500" Grid.Row="1" />
-        <TextBlock x:Name="hashszoveg" FontSize="20" Grid.Row="4" />
+        <TextBlock x:Name="hashszoveg" FontSize="20" Grid.Row="4" HorizontalAlignment="Center"/>
         <Button x:Name="buttonHash" Content="Hash generálás" Width="100" Height="50" Grid.Row="5" Click="buttonHash_Click" />
+        <Button x:Name="buttonFajlHash" Content="Fájl választása" Width="100" Height="50" Grid.Row="2" />
     </Grid>
 </Window>

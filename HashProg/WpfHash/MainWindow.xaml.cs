@@ -42,6 +42,16 @@ namespace WpfHash
             {
                 hashszoveg.Text = hash.CreateHash(HashType.SHA1, szoveg.Text);
             }
+            else if(selectsha256.IsChecked==true)
+            {
+                hashszoveg.Text = hash.CreateHash(HashType.SHA256,szoveg.Text);
+            } else if(selectsha384.IsChecked==true)
+            {
+                hashszoveg.Text = hash.CreateHash(HashType.SHA384,szoveg.Text);
+            } else
+            {
+                hashszoveg.Text = hash.CreateHash(HashType.SHA512, szoveg.Text);
+            }
         }
     }
 }
