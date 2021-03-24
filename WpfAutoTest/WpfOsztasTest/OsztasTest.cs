@@ -43,7 +43,7 @@ namespace WpfOsztasTest
             bErtek.SendKeys("4");
             driver.FindElementByAccessibilityId("buttonSzamol").Click();
             eredmeny = driver.FindElementByAccessibilityId("textblockEredmeny");
-            Assert.AreEqual(0.5, Convert.ToDouble(eredmeny));
+            Assert.AreEqual(0.5, Convert.ToDouble(eredmeny.Text));
 
 
         }
