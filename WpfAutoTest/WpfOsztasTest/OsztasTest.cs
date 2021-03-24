@@ -31,7 +31,12 @@ namespace WpfOsztasTest
         }
 
         [Test]
-        public void OsztasTest()
+        [TestCase(1,2,0.5)]
+        [TestCase(2,1,2)]
+        [TestCase(15,5,3)]
+        [TestCase(35,5,7)]
+        [TestCase(56,2,28)]
+        public void OsztasTest(double a,double b,double elvart)
         {
             var aErtek = driver.FindElementByAccessibilityId("textboxA");
             var bErtek = driver.FindElementByAccessibilityId("textboxB");
@@ -39,11 +44,11 @@ namespace WpfOsztasTest
             aErtek.Clear();
             bErtek.Clear();
             eredmeny.Clear();
-            aErtek.SendKeys("2");
-            bErtek.SendKeys("4");
+            aErtek.SendKeys(a.ToString());
+            bErtek.SendKeys(b.ToString());
             driver.FindElementByAccessibilityId("buttonSzamol").Click();
             eredmeny = driver.FindElementByAccessibilityId("textblockEredmeny");
-            Assert.AreEqual(0.5, Convert.ToDouble(eredmeny.Text));
+            Assert.AreEqual(elvart, Convert.ToDouble(eredmeny.Text));
 
 
         }
