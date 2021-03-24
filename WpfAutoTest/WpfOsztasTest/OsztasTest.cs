@@ -54,8 +54,8 @@ namespace WpfOsztasTest
         [Test]
         [TestCase(1,2,0.5)]
         [TestCase(2,1,2)]
-        [TestCase(15,5,3)]
-        [TestCase(35,5,7)]
+        [TestCase(15,5,2)]
+        [TestCase(35,5,6)]
         [TestCase(56,2,28)]
         public void OsztasTest(double a,double b,double elvart)
         {
@@ -90,7 +90,10 @@ namespace WpfOsztasTest
                 var elvart = TestContext.CurrentContext.Test.Arguments.GetValue(2);
                 string fajlnev = a + "_" + b + "_" + elvart;
                 Screenshot screenshot = shot.GetScreenshot();
-
+                screenshot.SaveAsFile(@"G:\14d_extrep\"+fajlnev+".png",ScreenshotImageFormat.Png);
+                extTest.Log(Status.Fail, stacktrace + errormsg);
+                extTest.Log(Status.Fail,"Képernyõ mentés");
+                extTest.AddScreenCaptureFromPath(fajlnev+".png");
 
 
             }
