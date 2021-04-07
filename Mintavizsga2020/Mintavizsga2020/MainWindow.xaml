@@ -13,7 +13,7 @@
                     <Button x:Name="buttonBetolt" Width="200" Height="60" Content="Fájl betöltése" Click="buttonBetolt_Click" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Keresés">
+            <TabItem x:Name="tabKereses" Header="Keresés" IsEnabled="False">
               <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -27,9 +27,11 @@
                     </Grid.RowDefinitions>
                     <TextBox x:Name="textboxAlsoAr" Width="200" FontSize="20" Height="40"/>
                     <TextBox x:Name="textboxFelsoAr" Width="200" FontSize="20" Height="40" Grid.Row="1"/>
+                    <DataGrid x:Name="datagridAdatok" Grid.Row="2" Grid.ColumnSpan="2" ColumnWidth="*"/>
+                    <Button x:Name="buttonKeres" Width="200" Height="40" FontSize="18" Content="Keresés" Grid.Row="3" Grid.ColumnSpan="2" Click="buttonKeres_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Új adat felvitele">
+            <TabItem x:Name="tabUjadat" Header="Új adat felvitele" IsEnabled="False">
                 
             </TabItem>
         </TabControl>

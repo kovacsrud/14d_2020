@@ -41,8 +41,31 @@ namespace Mintavizsga2020
             if (dialog.ShowDialog()==true)
             {
                 autolista = new AutoLista(dialog.FileName,';',1);
+                tabKereses.IsEnabled = true;
+                tabUjadat.IsEnabled = true;
             }
             Debug.WriteLine(autolista.Autok.Count);
+        }
+
+        private void buttonKeres_Click(object sender, RoutedEventArgs e)
+        {
+            
+            try
+            {
+                var alsoAr = Convert.ToInt32(textboxAlsoAr.Text);
+                var felsoAr = Convert.ToInt32(textboxFelsoAr.Text);
+                var eredmeny = autolista.Autok.FindAll(x => x.Ar >= alsoAr && x.Ar <= felsoAr);
+                if (eredmeny.Count<1)
+                {
+                    throw new ArgumentException("Nincs a feltételeknek megfelelő adat!");
+                }
+                datagridAdatok.ItemsSource = eredmeny;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
