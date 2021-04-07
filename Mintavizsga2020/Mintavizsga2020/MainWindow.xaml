@@ -13,6 +13,25 @@
                     <Button x:Name="buttonBetolt" Width="200" Height="60" Content="Fájl betöltése" Click="buttonBetolt_Click" />
                 </Grid>
             </TabItem>
+            <TabItem Header="Keresés">
+              <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="textboxAlsoAr" Width="200" FontSize="20" Height="40"/>
+                    <TextBox x:Name="textboxFelsoAr" Width="200" FontSize="20" Height="40" Grid.Row="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Új adat felvitele">
+                
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
