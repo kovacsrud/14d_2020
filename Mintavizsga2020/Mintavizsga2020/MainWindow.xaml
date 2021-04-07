@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Betöltés">
+                <Grid>
+                    <Button x:Name="buttonBetolt" Width="200" Height="60" Content="Fájl betöltése" Click="buttonBetolt_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

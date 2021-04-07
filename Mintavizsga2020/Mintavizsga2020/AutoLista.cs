@@ -33,5 +33,10 @@ namespace Mintavizsga2020
             }
         }
 
+        public void HozzaadAuto(Auto auto)
+        {
+            autok.Add(auto);
+        }
+
     }
 }
