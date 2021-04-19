@@ -37,6 +37,8 @@ namespace WpfVG
                 {
                     gamedata = new GameData(dialog.FileName, ';', 1);
                     MessageBox.Show($"Sikeres betöltés,sorok száma:{gamedata.Games.Count}");
+                    comboPlatform.ItemsSource = gamedata.GetPlatforms();
+                    tabPlatform.IsEnabled = true;
                 }
                 catch(Exception ex)
                 {
@@ -44,6 +46,14 @@ namespace WpfVG
                 }
             }
 
+        }
+
+        private void comboPlatform_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = comboPlatform.SelectedValue.ToString();
+            var eredmeny = gamedata.Games.FindAll(x=>x.Platform==selected);
+            datagridPlatform.ItemsSource = eredmeny;
+           
         }
     }
 }

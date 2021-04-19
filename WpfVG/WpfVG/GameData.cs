@@ -21,5 +21,19 @@ namespace WpfVG
                 games.Add(new Game(sorok[i],hatarolo));
             }
         }
+
+        public List<string> GetPlatforms()
+        {
+            List<string> platforms = new List<string>();
+            var platformLookup = games.ToLookup(x => x.Platform).OrderBy(x=>x.Key);
+
+            foreach (var i in platformLookup)
+            {
+                platforms.Add(i.Key);
+            }
+
+            return platforms;
+
+        }
     }
 }
