@@ -40,7 +40,7 @@ namespace WpfVG
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message,"Hiba!",MessageBoxButton.OK,MessageBoxImage.Error);
+                    MessageBox.Show(ex.StackTrace,"Hiba!",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
             }
 

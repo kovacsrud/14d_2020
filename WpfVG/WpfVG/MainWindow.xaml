@@ -13,8 +13,15 @@
                     <Button x:Name="buttonBetolt" Width="200" Height="40" Content="Adatok betöltése" Click="buttonBetolt_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Lekérdezés">
-                
+            <TabItem Header="Platform">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <ComboBox x:Name="comboPlatform" FontSize="18" Height="30" Width="200" />
+                    <DataGrid x:Name="datagridPlatform" ColumnWidth="*" Grid.Row="1"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>

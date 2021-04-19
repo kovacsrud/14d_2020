@@ -30,11 +30,11 @@ namespace WpfVG
             Year = e[3];
             Genre = e[4];
             Publisher = e[5];
-            NAsales = Convert.ToDouble(e[6]);
-            EUsales= Convert.ToDouble(e[7]);
-            JPsales= Convert.ToDouble(e[8]);
-            Othersales= Convert.ToDouble(e[9]);
-            Globalsales = Convert.ToDouble(e[10]);
+            NAsales = Convert.ToDouble(e[6].Replace('.',','));
+            EUsales= Convert.ToDouble(e[7].Replace('.', ','));
+            JPsales= Convert.ToDouble(e[8].Replace('.', ','));
+            Othersales= Convert.ToDouble(e[9].Replace('.', ','));
+            Globalsales = Convert.ToDouble(e[10].Replace('.', ','));
         }
 
     }
