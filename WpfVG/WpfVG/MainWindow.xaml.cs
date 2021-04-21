@@ -60,7 +60,11 @@ namespace WpfVG
         private void buttonKereses_Click(object sender, RoutedEventArgs e)
         {
             var jateknev = textboxKereses.Text;
-            var eredmeny = gamedata.Games.FindAll(x=>x.Name==jateknev);
+            datagridKereses.ItemsSource = null;
+            datagridKereses.Items.Clear();
+            //var eredmeny = gamedata.Games.FindAll(x=>x.Name.ToLower()==jateknev.ToLower());
+            var eredmeny = gamedata.Games.FindAll(x=>x.Name.Replace(" ","").ToLower().Contains(jateknev.Replace(" ","").ToLower()));
+            
 
             if (eredmeny.Count==0)
             {
