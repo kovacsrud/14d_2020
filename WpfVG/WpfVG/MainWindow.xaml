@@ -52,7 +52,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="4*"/>
                     </Grid.RowDefinitions>
-                    <ComboBox x:Name="comboboxKategoria" Grid.ColumnSpan="2" Width="300" Height="30" FontSize="18" />
+                    <ComboBox x:Name="comboboxKategoria" Grid.ColumnSpan="2" Width="300" Height="30" FontSize="18" SelectionChanged="comboboxKategoria_SelectionChanged" />
                     <TextBlock Text="Min. eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" />
                     <TextBlock x:Name="textblockMinSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" />
                     <TextBlock Text="Max. eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" />

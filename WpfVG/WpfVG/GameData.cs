@@ -35,5 +35,18 @@ namespace WpfVG
             return platforms;
 
         }
+
+        public List<string> GetKategoria()
+        {
+            List<string> kategoriak = new List<string>();
+            var kategoriaLookup = games.ToLookup(x=>x.Genre).OrderBy(x=>x.Key);
+
+            foreach (var i in kategoriaLookup)
+            {
+                kategoriak.Add(i.Key);
+            }
+            return kategoriak;
+
+        }
     }
 }
