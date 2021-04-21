@@ -39,6 +39,7 @@ namespace WpfVG
                     MessageBox.Show($"Sikeres betöltés,sorok száma:{gamedata.Games.Count}");
                     comboPlatform.ItemsSource = gamedata.GetPlatforms();
                     tabPlatform.IsEnabled = true;
+                    tabKereses.IsEnabled = true;
                 }
                 catch(Exception ex)
                 {
@@ -54,6 +55,20 @@ namespace WpfVG
             var eredmeny = gamedata.Games.FindAll(x=>x.Platform==selected);
             datagridPlatform.ItemsSource = eredmeny;
            
+        }
+
+        private void buttonKereses_Click(object sender, RoutedEventArgs e)
+        {
+            var jateknev = textboxKereses.Text;
+            var eredmeny = gamedata.Games.FindAll(x=>x.Name==jateknev);
+
+            if (eredmeny.Count==0)
+            {
+                MessageBox.Show("Nincs a kifejezésnek megfelelő találat!","Info",MessageBoxButton.OK,MessageBoxImage.Information);
+            } else
+            {
+                datagridKereses.ItemsSource = eredmeny;
+            }
         }
     }
 }

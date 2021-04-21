@@ -34,7 +34,7 @@
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <TextBox x:Name="textboxKereses" Width="300" Height="30" FontSize="20" />
-                    <Button x:Name="buttonKereses" Content="Keresés" Width="200" Height="30" Grid.Column="1"/>
+                    <Button x:Name="buttonKereses" Content="Keresés" Width="200" Height="30" Grid.Column="1" Click="buttonKereses_Click"/>
                     <DataGrid x:Name="datagridKereses" ColumnWidth="*" Grid.Row="1" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
