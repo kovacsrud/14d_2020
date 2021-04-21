@@ -38,6 +38,23 @@
                     <DataGrid x:Name="datagridKereses" ColumnWidth="*" Grid.Row="1" Grid.ColumnSpan="2"/>
                 </Grid>
             </TabItem>
+            <TabItem x:Name="tabStatisztika" Header="Játék eladások" IsEnabled="False">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
