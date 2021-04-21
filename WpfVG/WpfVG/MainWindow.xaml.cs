@@ -83,9 +83,15 @@ namespace WpfVG
             var selected = comboboxKategoria.SelectedValue.ToString();
             var eredmeny = gamedata.Games.FindAll(x=>x.Genre==selected);
             datagridEladasok.ItemsSource = eredmeny;
+            
             var minEladas = eredmeny.Min(x => x.Globalsales);
+            var minEredmeny = eredmeny.FindAll(x => x.Globalsales == minEladas);
+            datagridMineladas.ItemsSource = minEredmeny;
             textblockMinSale.Text = $"{minEladas} millió";
             var maxEladas = eredmeny.Max(x=>x.Globalsales);
+            var maxEredmeny = eredmeny.FindAll(x=>x.Globalsales==maxEladas);
+            datagridMaxeladas.ItemsSource = maxEredmeny;
+
             textblockMaxnSale.Text = $"{maxEladas} millió";
             var avgEladas = eredmeny.Average(x => x.Globalsales);
             textblockAvgSale.Text = $"{avgEladas:0.00} millió";

@@ -47,7 +47,9 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
+                        <RowDefinition Height="4*"/>
                         <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="4*"/>
@@ -55,13 +57,15 @@
                     <ComboBox x:Name="comboboxKategoria" Grid.ColumnSpan="2" Width="300" Height="30" FontSize="18" SelectionChanged="comboboxKategoria_SelectionChanged" />
                     <TextBlock Text="Min. eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" />
                     <TextBlock x:Name="textblockMinSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" />
-                    <TextBlock Text="Max. eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" />
-                    <TextBlock x:Name="textblockMaxnSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" />
-                    <TextBlock Text="Átlagos eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" />
-                    <TextBlock x:Name="textblockAvgSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" />
-                    <TextBlock Text="Összes eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" />
-                    <TextBlock x:Name="textblockSumSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" />
-                    <DataGrid x:Name="datagridEladasok" ColumnWidth="*" Grid.Row="5" Grid.ColumnSpan="2"/>
+                    <TextBlock Text="Max. eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" />
+                    <TextBlock x:Name="textblockMaxnSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" />
+                    <TextBlock Text="Átlagos eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" />
+                    <TextBlock x:Name="textblockAvgSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1" />
+                    <TextBlock Text="Összes eladás" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" />
+                    <TextBlock x:Name="textblockSumSale" TextAlignment="Center" Width="200" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="1" />
+                    <DataGrid x:Name="datagridEladasok" ColumnWidth="*" Grid.Row="7" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="datagridMineladas" ColumnWidth="*" Grid.Row="2" Grid.ColumnSpan="2" />
+                    <DataGrid x:Name="datagridMaxeladas" ColumnWidth="*" Grid.Row="4" Grid.ColumnSpan="2" />
                 </Grid>
             </TabItem>
         </TabControl>
